@@ -22,7 +22,8 @@ public class GameplayInputProvider : InputProvider
         _Move.action.Enable();
         _Jump.action.Enable();
 
-        _Move.action.performed += MovePerfomed;
+        _Move.action.started += MovePerfomed;
+        _Move.action.canceled += MoveCanceled;
         _Jump.action.performed += JumpPerfomed;
     }
 
@@ -31,7 +32,8 @@ public class GameplayInputProvider : InputProvider
         _Move.action.Disable();
         _Jump.action.Disable();
 
-        _Move.action.performed -= MovePerfomed;
+        _Move.action.started -= MovePerfomed;
+        _Move.action.canceled -= MoveCanceled;
         _Jump.action.performed -= JumpPerfomed;
     }
 
@@ -41,6 +43,11 @@ public class GameplayInputProvider : InputProvider
         OnMove?.Invoke(value);
     }
 
+    private void MoveCanceled(InputAction.CallbackContext obj)
+    {
+        float value = obj.action.ReadValue<float>();
+        OnMove?.Invoke(-value);
+    }
     private void JumpPerfomed(InputAction.CallbackContext obj)
     {
         OnJump?.Invoke();
