@@ -29,11 +29,10 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         // if space is pressed, NextTarget is called
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Space pressed");
-            NextTarget();
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     NextTarget();
+        // }
 
         if (isLerping)
         {
