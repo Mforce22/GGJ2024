@@ -34,7 +34,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         
     }
 
-    int GetActiveLevel()
+    public int GetActiveLevel()
     {
         return activeLevel;
     }
