@@ -6,19 +6,31 @@ public class FlyingDrone : MonoBehaviour
 {
 
     [SerializeField]
-    private float speed = 1f;
+    private float speed = 5f;
     [SerializeField]
     private float viewCheckTime = .5f;
     [SerializeField]
     private float chaseTime = 5f;
     [SerializeField]
-    private float viewPlayerRange = 5f;
+    private float viewPlayerRange = 7f;
     [SerializeField]
-    private float viewObstacleRange = 1f;
+    private float viewObstacleRange = 2f;
     [SerializeField]
-    private float rotationSpeed = 250f;
+    private float rotationSpeed = 500f;
 
     private Quaternion desiredRotation;
+    private Quaternion wingsDesiredRotation = Quaternion.Euler(0, 0, 60);
+    [SerializeField]
+    private float wingsRotationSpeed = 500f;
+    [SerializeField]
+    private Transform wingsTransform;
+
+    private Quaternion bodyDesiredRotation = Quaternion.Euler(30, 0, 0);
+    [SerializeField]
+    private float bodyRotationSpeed = 100f;
+    [SerializeField]
+    private Transform bodyTransform;
+
 
     private GameObject player;
 
@@ -37,6 +49,7 @@ public class FlyingDrone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Animate();
         if (Mathf.Approximately(transform.rotation.eulerAngles.y, desiredRotation.eulerAngles.y))
         {
             Move();
@@ -58,6 +71,35 @@ public class FlyingDrone : MonoBehaviour
             // if the drone sees an obstacle, turn around
             turnAround();
         }
+    }
+
+    void Animate()
+    {
+        if (Mathf.Abs(wingsTransform.localRotation.eulerAngles.z - wingsDesiredRotation.eulerAngles.z) < 0.01f)
+        {
+            if (wingsDesiredRotation.eulerAngles.z == 300)
+            {
+                wingsDesiredRotation = Quaternion.Euler(0, 0, 60);
+            }
+            else
+            {
+                wingsDesiredRotation = Quaternion.Euler(0, 0, 300);
+            }
+        }
+        wingsTransform.localRotation = Quaternion.RotateTowards(wingsTransform.localRotation, wingsDesiredRotation, wingsRotationSpeed * Time.deltaTime);
+
+        if (Mathf.Abs(bodyTransform.localRotation.eulerAngles.x - bodyDesiredRotation.eulerAngles.x) < 0.01f)
+        {
+            if (bodyDesiredRotation == Quaternion.Euler(30, 0, 0))
+            {
+                bodyDesiredRotation = Quaternion.Euler(330, 0, 0);
+            }
+            else
+            {
+                bodyDesiredRotation = Quaternion.Euler(30, 0, 0);
+            }
+        }
+        bodyTransform.localRotation = Quaternion.RotateTowards(bodyTransform.localRotation, bodyDesiredRotation, bodyRotationSpeed * Time.deltaTime);
     }
 
     void Rotate()

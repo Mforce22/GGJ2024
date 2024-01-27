@@ -52,20 +52,15 @@ public class GroundDrone : MonoBehaviour
     void Animate()
     {
         // animate the drone
-        Debug.Log("CURRENT: " + tailTransform.localRotation.eulerAngles.z);
-        Debug.Log("CURRENT TARGET: " + tailDesiredRotation.eulerAngles.z);
         if (Mathf.Approximately(tailTransform.localRotation.eulerAngles.z, tailDesiredRotation.eulerAngles.z))
         {
-            Debug.Log("CLOSE");
             if (tailDesiredRotation.eulerAngles.z == 0)
             {
                 tailDesiredRotation = Quaternion.Euler(0, 0, 70);
-                Debug.Log("TARGET 70");
             }
             else
             {
                 tailDesiredRotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("TARGET 0");
             }
         }
         tailTransform.localRotation = Quaternion.RotateTowards(tailTransform.localRotation, tailDesiredRotation, tailRotationSpeed * Time.deltaTime);
