@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Priority: 80
+  playerPrefab: {fileID: 7973410841093241977, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
   activeLevel: 0
   waitTime: 3
   changeLevelEvent: {fileID: 11400000, guid: 6889c0305965ab8428ee2768b3f00ea7, type: 2}
