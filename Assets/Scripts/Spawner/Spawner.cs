@@ -32,6 +32,10 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject rightLimiters;
 
+    [Header("Falling Objects")]
+    [SerializeField]
+    private GameObject fallingObject;
+
     private bool isActivated = false;
 
     private float timeBeforeStart = 1000;
@@ -105,6 +109,9 @@ public class Spawner : MonoBehaviour
         int randomX = Random.Range(leftX, rightX);
 
         Debug.Log("Spawn at location: " +  randomX);
+
+        //spawn the object
+        Instantiate(fallingObject, new Vector3(randomX, transform.position.y, transform.position.z), Quaternion.identity);
 
         SetTimer();
     }
