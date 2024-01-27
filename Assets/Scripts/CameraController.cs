@@ -16,9 +16,14 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float time = 2f;
 
+
+    [Header("Events")]
+    [SerializeField]
+    private GameEvent startStoryEvent;
+
     private bool isLerping = false;
 
-    private GameMaster gameMaster;
+    //private GameMaster gameMaster;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +32,9 @@ public class CameraController : MonoBehaviour
         transform.position = targets[index].obj.transform.position;
 
         //get game master with instance
-        gameMaster = GameMaster.Instance;
+        //gameMaster = GameMaster.Instance;
+
+        startStoryEvent.Invoke();
 
     }
 
