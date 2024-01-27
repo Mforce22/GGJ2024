@@ -8,14 +8,13 @@ public class FlyingDrone : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
     [SerializeField]
-    private float viewCheckTime = 2f;
+    private float viewCheckTime = .5f;
     [SerializeField]
     private float chaseTime = 5f;
     [SerializeField]
-    private float viewPlayerRange = 15f;
+    private float viewPlayerRange = 5f;
     [SerializeField]
-    private float viewObstacleRange = 15f;
-    [SerializeField]
+    private float viewObstacleRange = 1f;
 
     private GameObject player;
 
@@ -25,6 +24,8 @@ public class FlyingDrone : MonoBehaviour
     {
         // use InvokeRepeating to launch seePlayer() 2 seconds
         // after the game starts, and every 2 seconds after that
+        player =
+                GameObject.FindGameObjectWithTag("Player");
         InvokeRepeating("checkStartChase", viewCheckTime, viewCheckTime);
     }
 
@@ -52,11 +53,13 @@ public class FlyingDrone : MonoBehaviour
     {
         // raycast from the drone to the player
         RaycastHit hit;
+        // Vector3 playerDirection = transform.right;
         Vector3 playerDirection = player.transform.position - transform.position;
         if (Physics.Raycast(transform.position, playerDirection, out hit, viewPlayerRange))
         {
+            Debug.Log(hit.collider.gameObject.tag);
             // if the raycast hits the player, return true
-            if (hit.collider.GetComponent<Platform>() != null)
+            if (hit.collider.gameObject.tag == "Player")
             {
                 if (!isChasing)
                 {
@@ -77,13 +80,11 @@ public class FlyingDrone : MonoBehaviour
         if (Physics.Raycast(transform.position, obstacleDirection, out hit, viewObstacleRange))
         {
             // if the raycast hits an obstacle, return true
-            if (hit.collider.gameObject.tag != "Obstacle")
+            if (hit.collider.gameObject.tag == "Platform")
             {
                 return true;
             }
         }
-        // one in 20 chance of printing hit
-        Debug.DrawRay(transform.position, obstacleDirection * viewObstacleRange, Color.red);
         return false;
     }
 
