@@ -15,4 +15,4 @@ MonoBehaviour:
   MaxSpeed: 10
   acceleration: 0.05
   deceleration: 0.02
-  jumpForce: 250
+  jumpForce: 500
