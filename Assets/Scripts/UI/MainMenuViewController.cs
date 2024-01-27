@@ -6,8 +6,11 @@ public class MainMenuViewController : MonoBehaviour
 {
     [SerializeField]
     private OptionsViewController _OptionsViewPrefab;
+    [SerializeField]
+    private CreditsViewController _CreditsViewPrefab;
 
     private OptionsViewController _optionsViewController;
+    private CreditsViewController _creditsViewController;
 
     public void ChangeScene(string scene)
     {
@@ -19,9 +22,15 @@ public class MainMenuViewController : MonoBehaviour
         if (_optionsViewController) return;
         _optionsViewController = Instantiate(_OptionsViewPrefab);
     }
+    public void OpenCredits()
+    {
+        if (_creditsViewController) return;
+        _creditsViewController = Instantiate(_CreditsViewPrefab);
+    }
 
     public void QuitGame()
     {
+        Debug.Log("Quit Game");
         Application.Quit();
     }
 }
