@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(BoxCollider))]
 public class CharacterController : MonoBehaviour
 {
     [SerializeField]
@@ -61,7 +62,7 @@ public class CharacterController : MonoBehaviour
 
     private void JumpCharacter()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, collider.size.y / 2 + 0.05f))
+        if (Physics.Raycast(transform.position, Vector3.down, collider.size.y / 2 + .5f))
         {
             //Debug.Log("JUMP");
             rigidbody.AddForce(new Vector3(0, jumpForce, 0));
@@ -81,23 +82,29 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         HandleMovement();
+        Rotate();
 
+        Debug.Log(currentSpeed);
         // Movement
-        if (Mathf.Approximately(transform.rotation.eulerAngles.y, desiredRotation.eulerAngles.y))
+        if (Mathf.Abs(transform.rotation.eulerAngles.y - desiredRotation.eulerAngles.y) < 0.01f)
         {
-            Vector3 movement = new Vector3(currentSpeed, 0, 0);
-            transform.Translate(movement * Time.deltaTime);
-        }
-        else
-        {
-            Rotate();
-        }
+            Vector3 movement = new Vector3(currentSpeed, rigidbody.velocity.y, 0f);
 
+            //transform.Translate(movement * Time.deltaTime);
+            rigidbody.velocity = movement;
 
+            /*
+            if (rigidbody.velocity.magnitude > MaxSpeed)
+            {
+                rigidbody.velocity.Normalize();
+                rigidbody.velocity.Scale(new Vector3(MaxSpeed, 0, 0));
+            }
+             */
+        }
 
         //Debug.DrawRay(transform.position, Vector3.down * collider.size.y / 2);
     }
@@ -107,28 +114,26 @@ public class CharacterController : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
     }
 
-
     private void HandleMovement()
     {
         if (currentDirection != 0)
         {
-            currentSpeed += acceleration * currentDirection;
+            currentSpeed += acceleration * currentDirection * Time.fixedDeltaTime;
+            desiredRotation = Quaternion.Euler(0, currentDirection > 0 ? 0 : 180, 0);
         }
         else
         {
-            currentSpeed += deceleration * -Math.Sign(currentSpeed);
+            float prevSpeed = currentSpeed;
+
+            currentSpeed += deceleration * -Math.Sign(currentSpeed) * Time.fixedDeltaTime;
+
+            if (prevSpeed * currentSpeed < 0f)
+            {
+                currentSpeed = 0f;
+            }
         }
 
-        if (Math.Abs(currentSpeed) < 1.5f * deceleration)
-        {
-            currentSpeed = 0;
-        }
-
-        currentSpeed = currentSpeed > MaxSpeed ? MaxSpeed : currentSpeed;
-        currentSpeed = currentSpeed < -MaxSpeed ? -MaxSpeed : currentSpeed;
-
-
-
+        currentSpeed = Mathf.Clamp(currentSpeed, -MaxSpeed, MaxSpeed);
     }
 
 
