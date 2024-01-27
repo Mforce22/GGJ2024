@@ -60,24 +60,23 @@ public class Spawner : MonoBehaviour
         rightX = (int)rightLimiters.transform.position.x;
 
         //debug
-        isActivated = true;
+        //isActivated = true;
     }
     
 
     private void ChangeLevelCallback(GameEvent evt)
     {
-        GameEvent gameEvent = (GameEvent)evt;
-        if (gameEvent == changeLevelEvent)
+
+
+        if (activeInLevel == GameMaster.Instance.GetActiveLevel())
         {
-            if (activeInLevel == GameMaster.Instance.GetActiveLevel())
-            {
-                isActivated = true;
-            }
-            else
-            {
-                isActivated = false;
-            }
+            isActivated = true;
         }
+        else
+        {
+            isActivated = false;
+        }
+        
     }   
 
     // Update is called once per frame
