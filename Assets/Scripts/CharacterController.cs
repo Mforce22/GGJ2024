@@ -18,6 +18,10 @@ public class CharacterController : MonoBehaviour
     [Header("Player Data")]
     public PlayerDataScriptable playerData;
 
+    [SerializeField]
+    private float rotationSpeed = 1000f;
+    private Quaternion desiredRotation;
+
 
     private bool isJumping;
 
@@ -41,6 +45,7 @@ public class CharacterController : MonoBehaviour
         deceleration = playerData.deceleration;
         jumpForce = playerData.jumpForce;
 
+        desiredRotation = transform.rotation;
     }
 
     private void OnEnable()
@@ -79,13 +84,27 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
 
-        // Movement
         HandleMovement();
 
-        Vector3 movement = new Vector3(currentSpeed, 0, 0);
+        // Movement
+        if (Mathf.Approximately(transform.rotation.eulerAngles.y, desiredRotation.eulerAngles.y))
+        {
+            Vector3 movement = new Vector3(currentSpeed, 0, 0);
+            transform.Translate(movement * Time.deltaTime);
+        }
+        else
+        {
+            Rotate();
+        }
 
-        transform.Translate(movement * Time.deltaTime);
+
+
         //Debug.DrawRay(transform.position, Vector3.down * collider.size.y / 2);
+    }
+
+    private void Rotate()
+    {
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
     }
 
 
