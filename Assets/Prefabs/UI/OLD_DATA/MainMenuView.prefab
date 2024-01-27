@@ -437,10 +437,6 @@ PrefabInstance:
       value: MainMenuViewController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Playground
-      objectReference: {fileID: 0}
-    - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -579,6 +575,10 @@ PrefabInstance:
       value: MainMenuViewController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -715,6 +715,10 @@ PrefabInstance:
     - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MainMenuViewController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
