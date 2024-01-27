@@ -289,6 +289,8 @@ MonoBehaviour:
   _Priority: 80
   activeLevel: 0
   changeLevelEvent: {fileID: 11400000, guid: 6889c0305965ab8428ee2768b3f00ea7, type: 2}
+  winMatchEvent: {fileID: 11400000, guid: 8e88c0bd8f2898e4c989a47b7f7946c4, type: 2}
+  loseMatchEvent: {fileID: 11400000, guid: 6b5acd05abf7f704fb503c9e09ced431, type: 2}
 --- !u!4 &1605396585
 Transform:
   m_ObjectHideFlags: 0

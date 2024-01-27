@@ -111,6 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035af8c2181dad54e8ed2943bee3d373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberGasCanister: 2
+  WinEvent: {fileID: 11400000, guid: 8e88c0bd8f2898e4c989a47b7f7946c4, type: 2}
+  LoseEvent: {fileID: 11400000, guid: 6b5acd05abf7f704fb503c9e09ced431, type: 2}
 --- !u!1 &8196561938970587777
 GameObject:
   m_ObjectHideFlags: 0

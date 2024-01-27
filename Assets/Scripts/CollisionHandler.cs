@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField]
+    private int numberGasCanister = 10;
 
-    }
+    [Header("Events")]
 
-    // Update is called once per frame
-    void Update()
-    {
+    [SerializeField]
+    private GameEvent WinEvent;
 
-    }
+    [SerializeField]
+    private GameEvent LoseEvent;
+
+    private int gasTaken = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,12 +25,28 @@ public class CollisionHandler : MonoBehaviour
         {
             Debug.Log("GAS");
             Destroy(other.gameObject);
+            gasTaken++;
+            if (gasTaken >= numberGasCanister)
+            {
+                WinEvent.Invoke();
+            }
         }
         else if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("ENEMY");
             // self destruct
             Destroy(gameObject);
+            LoseEvent.Invoke();
         }
+    }
+
+    private void PlayerLost()
+    {
+        LoseEvent.Invoke();
+    }
+
+    private void PlayerWon()
+    {
+        WinEvent.Invoke();
     }
 }

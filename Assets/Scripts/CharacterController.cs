@@ -88,7 +88,7 @@ public class CharacterController : MonoBehaviour
         HandleMovement();
         Rotate();
 
-        Debug.Log(currentSpeed);
+        //Debug.Log(currentSpeed);
         // Movement
         if (Mathf.Abs(transform.rotation.eulerAngles.y - desiredRotation.eulerAngles.y) < 0.01f)
         {
