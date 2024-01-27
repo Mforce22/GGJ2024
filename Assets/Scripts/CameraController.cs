@@ -34,18 +34,24 @@ public class CameraController : MonoBehaviour
         //get game master with instance
         //gameMaster = GameMaster.Instance;
 
-        startStoryEvent.Invoke();
+        
 
+    }
+
+    private void OnEnable()
+    {
+        Debug.Log("Emilio Badabodele");
+        startStoryEvent.Invoke();
     }
 
     // Update is called once per frame
     void Update()
     {
          //if space is pressed, NextTarget is called
-         if (Input.GetKeyDown(KeyCode.Space))
-         {
-             NextTarget();
-         }
+         //if (Input.GetKeyDown(KeyCode.Space))
+         //{
+         //    NextTarget();
+         //}
 
         if (isLerping)
         {
@@ -57,7 +63,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void NextTarget()
+    public void NextTarget()
     {
         // slowly lerp to the next target using transform.position
         index++;
@@ -68,7 +74,7 @@ public class CameraController : MonoBehaviour
         isLerping = true;
     }
 
-    void PreviousTarget()
+    public void PreviousTarget()
     {
         // slowly lerp to the previous target
         index--;

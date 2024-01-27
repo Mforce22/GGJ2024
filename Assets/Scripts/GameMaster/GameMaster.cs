@@ -12,9 +12,15 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private int activeLevel = 0;
 
+    [SerializeField]
+    private float waitTime = 3f;
+
     [Header("Events")]
     [SerializeField]
     private GameEvent changeLevelEvent;
+
+    [SerializeField]
+    private GameEvent startStoryEvent;
 
     [SerializeField]
     private GameEvent winMatchEvent;
@@ -23,15 +29,22 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private GameEvent loseMatchEvent;
 
 
-    public void Setup()
-    {
-        SystemCoordinator.Instance.FinishSystemSetup(this);
-    }
+    private CameraController camera;
 
-    private void OnEnable()
+    public void Setup()
     {
         winMatchEvent.Subscribe(WinMatch);
         loseMatchEvent.Subscribe(LoseMatch);
+        startStoryEvent.Subscribe(StartStory);
+        SystemCoordinator.Instance.FinishSystemSetup(this);
+    }
+
+    private void OnDisable()
+    {
+        winMatchEvent.Unsubscribe(WinMatch);
+        loseMatchEvent.Unsubscribe(LoseMatch);
+        startStoryEvent.Unsubscribe(StartStory);
+        
     }
 
     // Start is called before the first frame update
@@ -65,5 +78,30 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private void LoseMatch(GameEvent evt)
     {
         Debug.Log("Match lost");
+    }
+
+    private void StartStory(GameEvent evt)
+    {
+        Debug.Log("Story started");
+
+        //camera = GameObject.Find("Main Camera").GetComponent<CameraController>();
+
+        //get a component in the scene
+        camera = FindObjectOfType<CameraController>();
+
+        StartCoroutine(waitSecs(waitTime));
+        StartCoroutine(waitSecs(waitTime * 2));
+        //camera.NextTarget();
+        StartCoroutine(waitSecs(waitTime * 3));
+        //camera.NextTarget();
+        StartCoroutine(waitSecs(waitTime * 4));
+        //camera.NextTarget();
+    }
+
+    private IEnumerator waitSecs(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        Debug.Log("Coroutine finished");
+        camera.NextTarget();
     }
 }
