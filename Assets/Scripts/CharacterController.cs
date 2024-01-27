@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(BoxCollider))]
 public class CharacterController : MonoBehaviour
 {
     [SerializeField]
@@ -61,7 +62,7 @@ public class CharacterController : MonoBehaviour
 
     private void JumpCharacter()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, collider.size.y / 2 + 0.05f))
+        if (Physics.Raycast(transform.position, Vector3.down, collider.size.y / 2 + .5f))
         {
             //Debug.Log("JUMP");
             rigidbody.AddForce(new Vector3(0, jumpForce, 0));
@@ -112,7 +113,8 @@ public class CharacterController : MonoBehaviour
     {
         if (currentDirection != 0)
         {
-            currentSpeed += acceleration * currentDirection;
+            currentSpeed += acceleration;
+            desiredRotation = Quaternion.Euler(0, currentDirection > 0 ? 0 : 180, 0);
         }
         else
         {
