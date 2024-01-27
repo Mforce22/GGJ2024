@@ -8,6 +8,11 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private int _Priority;
     public int Priority { get => _Priority; }
 
+    [Header("Player")]
+    [SerializeField]
+    private GameObject playerPrefab;
+
+
     [Header("Variables")]
     [SerializeField]
     private int activeLevel = 0;
@@ -30,6 +35,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
 
     private CameraController camera;
+
+    private float cameraFloat;
+
+    private int completedLevel = 0;
 
     public void Setup()
     {
@@ -72,12 +81,22 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     private void WinMatch(GameEvent evt)
     {
-        Debug.Log("Match Won");
+        //Debug.Log("Match Won");
+
+        //change image
+
+        //change level
+        completedLevel++;
+        NextLevel();
+        startGame(cameraFloat * 2);
     }
 
     private void LoseMatch(GameEvent evt)
     {
-        Debug.Log("Match lost");
+        //Debug.Log("Match lost");
+        lostGame(cameraFloat);
+
+
     }
 
     private void StartStory(GameEvent evt)
@@ -88,6 +107,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
         //get a component in the scene
         camera = FindObjectOfType<CameraController>();
+        cameraFloat = camera.GetDelayTime();
 
         StartCoroutine(waitSecs(waitTime));
         StartCoroutine(waitSecs(waitTime * 2));
@@ -96,6 +116,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //camera.NextTarget();
         StartCoroutine(waitSecs(waitTime * 4));
         //camera.NextTarget();
+        StartCoroutine(startGame(waitTime * 5));
+        //Start the game
+
     }
 
     private IEnumerator waitSecs(float secs)
@@ -103,5 +126,49 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         yield return new WaitForSeconds(secs);
         Debug.Log("Coroutine finished");
         camera.NextTarget();
+    }
+
+    private IEnumerator startGame(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        NextLevel();
+        yield return new WaitForSeconds(cameraFloat);
+        NextLevel();
+        yield return new WaitForSeconds(cameraFloat);
+        //spawn player
+        SpawnPlayer();        
+    }
+
+    private IEnumerator lostGame(float secs)
+    {
+        PreviousLevel() ;
+        yield return new WaitForSeconds(secs);
+        NextLevel() ;
+        yield return new WaitForSeconds(secs);
+        //spawn player
+        SpawnPlayer() ;
+    }
+
+    void NextLevel()
+    {
+        camera.NextTarget();
+    }
+
+    void PreviousLevel()
+    {
+        camera.PreviousTarget();
+    }
+
+    void SpawnPlayer()
+    {
+        //spawn the player
+
+        GameObject spawnLocation = camera.GetPlayerSpawnPoint(completedLevel);
+        
+        //instantiate player
+        if (spawnLocation != null)
+        {
+            Instantiate(playerPrefab, spawnLocation.transform);
+        }
     }
 }

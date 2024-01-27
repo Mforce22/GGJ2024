@@ -16,6 +16,10 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float time = 2f;
 
+    [Header("Player Spawn")]
+    [SerializeField]
+    private GameObject[] playerSpawnPoints;
+
 
     [Header("Events")]
     [SerializeField]
@@ -48,10 +52,10 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         //if space is pressed, NextTarget is called
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            NextTarget();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    NextTarget();
+        //}
 
         if (isLerping)
         {
@@ -83,5 +87,15 @@ public class CameraController : MonoBehaviour
             index = targets.Length - 1;
         }
         isLerping = true;
+    }
+
+    public float GetDelayTime()
+    {
+        return time;
+    }
+
+    public GameObject GetPlayerSpawnPoint(int index)
+    {
+        return playerSpawnPoints[index];
     }
 }
