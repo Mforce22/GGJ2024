@@ -34,6 +34,14 @@ public class CharacterController : MonoBehaviour
 
     private GameplayInputProvider _gameplayInputProvider;
 
+    private Quaternion desiredLArmRotation = Quaternion.Euler(0, 0, 0);
+    private Quaternion desiredRArmRotation = Quaternion.Euler(0, 0, 0);
+
+    [SerializeField]
+    private Transform leftArm;
+    [SerializeField]
+    private Transform rightArm;
+
     private void Awake()
     {
         _gameplayInputProvider = PlayerController.Instance.GetInput<GameplayInputProvider>(_IdProvider.Id);
@@ -112,6 +120,8 @@ public class CharacterController : MonoBehaviour
     private void Rotate()
     {
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+        leftArm.localRotation = Quaternion.RotateTowards(leftArm.localRotation, desiredLArmRotation, rotationSpeed * Time.deltaTime);
+        rightArm.localRotation = Quaternion.RotateTowards(rightArm.localRotation, desiredRArmRotation, rotationSpeed * Time.deltaTime);
     }
 
     private void HandleMovement()
@@ -119,7 +129,15 @@ public class CharacterController : MonoBehaviour
         if (currentDirection != 0)
         {
             currentSpeed += acceleration * currentDirection * Time.fixedDeltaTime;
-            desiredRotation = Quaternion.Euler(0, currentDirection > 0 ? 0 : 180, 0);
+            // clamp inclination to 45 degrees
+            float inclination = Mathf.Clamp(currentSpeed / MaxSpeed * 45, -30f, 30f);
+            if (currentDirection > 0)
+            {
+                inclination *= -1;
+            }
+            desiredRotation = Quaternion.Euler(0, currentDirection > 0 ? 0 : 180, inclination);
+            desiredLArmRotation = Quaternion.Euler(-inclination * 3, 0, 0);
+            desiredRArmRotation = Quaternion.Euler(inclination * 3, 0, 0);
         }
         else
         {
@@ -131,6 +149,8 @@ public class CharacterController : MonoBehaviour
             {
                 currentSpeed = 0f;
             }
+            desiredLArmRotation = Quaternion.Euler(0, 0, 0);
+            desiredRArmRotation = Quaternion.Euler(0, 0, 0);
         }
 
         currentSpeed = Mathf.Clamp(currentSpeed, -MaxSpeed, MaxSpeed);
