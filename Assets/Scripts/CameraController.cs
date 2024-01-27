@@ -18,21 +18,27 @@ public class CameraController : MonoBehaviour
 
     private bool isLerping = false;
 
+    private GameMaster gameMaster;
+
     // Start is called before the first frame update
     void Start()
     {
         // set the camera to the first target
         transform.position = targets[index].obj.transform.position;
+
+        //get game master with instance
+        gameMaster = GameMaster.Instance;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if space is pressed, NextTarget is called
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     NextTarget();
-        // }
+         //if space is pressed, NextTarget is called
+         if (Input.GetKeyDown(KeyCode.Space))
+         {
+             NextTarget();
+         }
 
         if (isLerping)
         {
