@@ -93,7 +93,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     private void LoseMatch(GameEvent evt)
     {
-        //Debug.Log("Match lost");
+        Debug.Log("Match lost");
         lostGame(cameraFloat);
 
 

@@ -40,9 +40,20 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    private void PlayerLost()
+    private void Update()
+    {
+        //get transform
+        if(transform.position.y <= -5)
+        {
+            StartCoroutine(PlayerLost());
+        }
+    }
+
+    private IEnumerator PlayerLost()
     {
         LoseEvent.Invoke();
+        yield return new WaitForSeconds(1f);
+        Destroy(this);
     }
 
     private void PlayerWon()
