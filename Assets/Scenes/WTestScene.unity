@@ -558,10 +558,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4908398134242761140, guid: 21456140d001e6a4f8ad4485137f3b4a, type: 3}
-      propertyPath: tailRotationSpeed
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7600984581678850612, guid: 21456140d001e6a4f8ad4485137f3b4a, type: 3}
       propertyPath: m_Name
       value: GroundDrone
