@@ -9,6 +9,12 @@ public class GroundDrone : MonoBehaviour
     private float speed = 5f;
     [SerializeField]
     private float rotationSpeed = 250f;
+    [SerializeField]
+    private float tailRotationSpeed = 100f;
+    [SerializeField]
+    private Transform tailTransform;
+    private Quaternion tailDesiredRotation = Quaternion.Euler(0, 0, 0);
+
     private Quaternion desiredRotation;
 
     void Start()
@@ -19,7 +25,8 @@ public class GroundDrone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Approximately(transform.rotation.eulerAngles.y, desiredRotation.eulerAngles.y))
+        Animate();
+        if (Mathf.Abs(transform.rotation.eulerAngles.y - desiredRotation.eulerAngles.y) < 0.01f)
         {
             Move();
         }
@@ -34,13 +41,34 @@ public class GroundDrone : MonoBehaviour
         // move the drone forward
         if (!willFall())
         {
-            transform.position += transform.right * speed * Time.deltaTime;
+            transform.position += transform.right * 5 * Time.deltaTime;
         }
         else
         {
             // if the drone sees an obstacle, turn around
             turnAround();
         }
+    }
+    void Animate()
+    {
+        // animate the drone
+        Debug.Log("CURRENT: " + tailTransform.localRotation.eulerAngles.z);
+        Debug.Log("CURRENT TARGET: " + tailDesiredRotation.eulerAngles.z);
+        if (Mathf.Approximately(tailTransform.localRotation.eulerAngles.z, tailDesiredRotation.eulerAngles.z))
+        {
+            Debug.Log("CLOSE");
+            if (tailDesiredRotation.eulerAngles.z == 0)
+            {
+                tailDesiredRotation = Quaternion.Euler(0, 0, 70);
+                Debug.Log("TARGET 70");
+            }
+            else
+            {
+                tailDesiredRotation = Quaternion.Euler(0, 0, 0);
+                Debug.Log("TARGET 0");
+            }
+        }
+        tailTransform.localRotation = Quaternion.RotateTowards(tailTransform.localRotation, tailDesiredRotation, tailRotationSpeed * Time.deltaTime);
     }
 
     void Rotate()

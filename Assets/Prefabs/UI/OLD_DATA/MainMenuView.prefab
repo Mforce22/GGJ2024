@@ -437,6 +437,10 @@ PrefabInstance:
       value: MainMenuViewController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: WTestScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400467228216435968, guid: 64fa3645a126f0449bdfced50779d4cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -863,6 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _OptionsViewPrefab: {fileID: 66445236344238178, guid: 23878bc7134814a4da16850f2fb32a2d, type: 3}
+  _CreditsViewPrefab: {fileID: 0}
 --- !u!224 &5036840141081680735 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2986662642291210281, guid: 1d5e5e104d9f75e46a25196cb024d4fc, type: 3}
