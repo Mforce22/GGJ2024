@@ -6,12 +6,27 @@ public class GroundDrone : MonoBehaviour
 {
 
     [SerializeField]
-    private float speed = 10f;
+    private float speed = 5f;
+    [SerializeField]
+    private float rotationSpeed = 250f;
+    private Quaternion desiredRotation;
+
+    void Start()
+    {
+        desiredRotation = transform.rotation;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (Mathf.Approximately(transform.rotation.eulerAngles.y, desiredRotation.eulerAngles.y))
+        {
+            Move();
+        }
+        else
+        {
+            Rotate();
+        }
     }
 
     void Move()
@@ -28,11 +43,16 @@ public class GroundDrone : MonoBehaviour
         }
     }
 
+    void Rotate()
+    {
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+    }
+
     bool willFall()
     {
         RaycastHit hit;
         Vector3 obstacleDirection = transform.right + transform.up * -1;
-        if (!Physics.Raycast(transform.position, obstacleDirection, out hit, speed * Time.deltaTime * 100))
+        if (!Physics.Raycast(transform.position, obstacleDirection, out hit, 5f))
         {
             Debug.Log("will fall");
             return true;
@@ -42,6 +62,6 @@ public class GroundDrone : MonoBehaviour
 
     void turnAround()
     {
-        transform.Rotate(0, -180, 0); // TODO: make this a smooth turn
+        desiredRotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + 180, 0);
     }
 }

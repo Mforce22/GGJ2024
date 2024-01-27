@@ -15,6 +15,10 @@ public class FlyingDrone : MonoBehaviour
     private float viewPlayerRange = 5f;
     [SerializeField]
     private float viewObstacleRange = 1f;
+    [SerializeField]
+    private float rotationSpeed = 250f;
+
+    private Quaternion desiredRotation;
 
     private GameObject player;
 
@@ -27,14 +31,21 @@ public class FlyingDrone : MonoBehaviour
         player =
                 GameObject.FindGameObjectWithTag("Player");
         InvokeRepeating("checkStartChase", viewCheckTime, viewCheckTime);
+        desiredRotation = transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (Mathf.Approximately(transform.rotation.eulerAngles.y, desiredRotation.eulerAngles.y))
+        {
+            Move();
+        }
+        else
+        {
+            Rotate();
+        }
     }
-
     void Move()
     {
         // move the drone forward
@@ -47,6 +58,11 @@ public class FlyingDrone : MonoBehaviour
             // if the drone sees an obstacle, turn around
             turnAround();
         }
+    }
+
+    void Rotate()
+    {
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
     }
 
     void checkStartChase()
@@ -96,6 +112,6 @@ public class FlyingDrone : MonoBehaviour
 
     void turnAround()
     {
-        transform.Rotate(0, -180, 0); // TODO: make this a smooth turn
+        desiredRotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + 180, 0);
     }
 }
