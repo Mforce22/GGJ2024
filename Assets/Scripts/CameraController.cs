@@ -47,11 +47,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         //if space is pressed, NextTarget is called
-         //if (Input.GetKeyDown(KeyCode.Space))
-         //{
-         //    NextTarget();
-         //}
+        //if space is pressed, NextTarget is called
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            NextTarget();
+        }
 
         if (isLerping)
         {
