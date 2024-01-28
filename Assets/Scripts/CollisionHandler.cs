@@ -10,10 +10,15 @@ public class CollisionHandler : MonoBehaviour
     [Header("Events")]
 
     [SerializeField]
+    private GameEvent DeathEvent2;
+
+    [SerializeField]
     private GameEvent WinEvent;
 
     [SerializeField]
     private GameEvent LoseEvent;
+
+    
 
     private int gasTaken = 0;
 
@@ -52,6 +57,7 @@ public class CollisionHandler : MonoBehaviour
     private IEnumerator PlayerLost()
     {
         LoseEvent.Invoke();
+        DeathEvent2.Invoke();
         yield return new WaitForSeconds(1f);
         Destroy(this);
     }
