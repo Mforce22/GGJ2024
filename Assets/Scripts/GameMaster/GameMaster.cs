@@ -137,22 +137,11 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //camera.NextTarget();
         StartCoroutine(waitSecsBip(waitTime * 3));
         //camera.NextTarget();
-        StartCoroutine(waitSecsCity1(waitTime * 4));
-        //camera.NextTarget();
         StartCoroutine(startGame(waitTime * 4));
         //Start the game
 
     }
-    private IEnumerator waitSecsCity1(float secs)
-    {
-        yield return new WaitForSeconds(secs);
-        SoundSystem.Instance.SS_StopMusic();
-        
-        Debug.Log("Coroutine finished");
-        camera.NextTarget();
-        yield return new WaitForSeconds(secondsToWait);
-        city1SoundEvent.Invoke();
-    }
+    
     private IEnumerator waitSecsBip(float secs)
     {
         yield return new WaitForSeconds(secs);
@@ -187,12 +176,16 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private IEnumerator startGame(float secs)
     {
         yield return new WaitForSeconds(secs);
+        SoundSystem.Instance.SS_StopMusic();
         NextLevel();
+        yield return new WaitForSeconds(secondsToWait);
+        city1SoundEvent.Invoke();
         yield return new WaitForSeconds(cameraFloat);
         NextLevel();
         yield return new WaitForSeconds(cameraFloat);
         //spawn player
         SpawnPlayer();
+        SoundSystem.Instance.SS_StopMusic();
     }
 
     private IEnumerator lostGame(float secs)

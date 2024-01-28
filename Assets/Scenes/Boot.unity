@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Priority: 80
-  secondsToWait: 1.5
+  secondsToWait: 1
   playerPrefab: {fileID: 7973410841093241977, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
   activeLevel: 0
   waitTime: 3
