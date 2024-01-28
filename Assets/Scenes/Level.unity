@@ -2391,6 +2391,8 @@ MonoBehaviour:
   - {fileID: 746045450}
   - {fileID: 836623274}
   - {fileID: 673624609}
+  changeLevelEvent: {fileID: 11400000, guid: 6889c0305965ab8428ee2768b3f00ea7, type: 2}
+  activeInLevel: 2
 --- !u!1 &545787728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3148,8 @@ MonoBehaviour:
   - {fileID: 282473258}
   - {fileID: 713553759}
   - {fileID: 1618694671}
+  changeLevelEvent: {fileID: 11400000, guid: 6889c0305965ab8428ee2768b3f00ea7, type: 2}
+  activeInLevel: 1
 --- !u!1001 &742631971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3870,6 +3874,8 @@ MonoBehaviour:
   - {fileID: 222669659}
   - {fileID: 657713928}
   - {fileID: 1163784237}
+  changeLevelEvent: {fileID: 11400000, guid: 6889c0305965ab8428ee2768b3f00ea7, type: 2}
+  activeInLevel: 3
 --- !u!4 &910069555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3787683603286104303, guid: b6791ac22e12ee74da76d49024ecd9dc, type: 3}
