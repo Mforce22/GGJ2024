@@ -7,7 +7,7 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField]
     private float speedX;
 
-    [SerializeField] 
+    [SerializeField]
     private float speedY;
 
     [SerializeField]
@@ -47,7 +47,8 @@ public class PlatformMovement : MonoBehaviour
                 }
             }
 
-        } else if (speedY != 0 && distanceY != 0)
+        }
+        else if (speedY != 0 && distanceY != 0)
         {
             transform.Translate(new Vector3(0, speedY * Time.deltaTime, 0));
             movedY += speedY * Time.deltaTime;
@@ -59,7 +60,8 @@ public class PlatformMovement : MonoBehaviour
                     //Debug.Log("Cambio");
                     speedY *= -1;
                 }
-            } else if (movedY <= 0)
+            }
+            else if (movedY <= 0)
             {
                 if (Mathf.Sign(speedY) == -1f)
                 {
@@ -77,5 +79,9 @@ public class PlatformMovement : MonoBehaviour
         {
             gameObject.GetComponent<BoxCollider>().enabled = true;
         }
+    }
+    public float GetSpeedX()
+    {
+        return speedX;
     }
 }
