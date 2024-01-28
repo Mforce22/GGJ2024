@@ -2589,6 +2589,7 @@ MonoBehaviour:
   - obj: {fileID: 962731379}
   - obj: {fileID: 636792070}
   - obj: {fileID: 365931360}
+  - obj: {fileID: 1652431830}
   time: 2
   playerSpawnPoints:
   - {fileID: 980134887}
