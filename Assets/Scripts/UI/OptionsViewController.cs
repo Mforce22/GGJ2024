@@ -17,17 +17,19 @@ public class OptionsViewController : MonoBehaviour
     }
     private void Start()
     {
-        //audioSlider.value = AudioSystem.Instance.GetVolume();
+        audioSlider.value = AudioSystem.Instance.GetVolume();
         soundSlider.value = SoundSystem.Instance.GetVolume();
     }
 
     public void setAudioVolume()
     {
-        //AudioSystem.Instance.SetVolume(volume);
+        AudioSystem.Instance.SetVolume(audioSlider.value);
+        audioSlider.value = AudioSystem.Instance.GetVolume();
     }
 
-    public void setSoundVolume(float volume)
+    public void setSoundVolume()
     {
-        SoundSystem.Instance.SetVolume(volume);
+        SoundSystem.Instance.SetVolume(soundSlider.value);
+        soundSlider.value = SoundSystem.Instance.GetVolume();
     }
 }

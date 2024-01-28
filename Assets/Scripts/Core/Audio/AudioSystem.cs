@@ -49,4 +49,9 @@ public class AudioSystem : Singleton<AudioSystem>, ISystem {
     public void StopMusic() {
         musicSource.Stop();
     }
+
+    public float GetVolume()
+    {
+        return musicSource.volume;
+    }
 }
