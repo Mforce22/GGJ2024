@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
@@ -24,6 +25,26 @@ public class CameraController : MonoBehaviour
     [Header("Events")]
     [SerializeField]
     private GameEvent startStoryEvent;
+
+    [Header("City Images")]
+    [SerializeField]
+    private Image cityImage1;
+
+    [SerializeField]
+    private Image cityImage2;
+
+    [SerializeField]
+    private Image cityImage3;
+
+    [Header("Sprites")]
+    [SerializeField]
+    private Sprite city1;
+
+    [SerializeField]
+    private Sprite city2;
+
+    [SerializeField]
+    private Sprite city3;
 
     private bool isLerping = false;
 
@@ -97,5 +118,23 @@ public class CameraController : MonoBehaviour
     public GameObject GetPlayerSpawnPoint(int index)
     {
         return playerSpawnPoints[index];
+    }
+
+    public void setCity(int index)
+    {
+        if(index == 0)
+        {
+            //cityImage1.set
+            //set sprite of city 1
+            cityImage1.sprite = city1;
+        }
+        if(index == 1)
+        {
+            cityImage1.sprite = city2;
+        }
+        if( index == 2)
+        {
+            cityImage1.sprite = city3;
+        }
     }
 }

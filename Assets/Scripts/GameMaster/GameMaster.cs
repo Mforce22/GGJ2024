@@ -107,6 +107,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //change image
 
         //change level
+        camera.setCity(completedLevel);
         completedLevel++;
         NextLevel();
         StartCoroutine(startGame(cameraFloat * 2));
@@ -125,11 +126,15 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         citySoundsEvent.Invoke();
         Debug.Log("Story started");
 
+        //debug
+        
+
         //camera = GameObject.Find("Main Camera").GetComponent<CameraController>();
 
         //get a component in the scene
         camera = FindObjectOfType<CameraController>();
         cameraFloat = camera.GetDelayTime();
+        //camera.setCity(completedLevel);
 
         StartCoroutine(waitSecsHint(waitTime));
 
@@ -185,6 +190,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         yield return new WaitForSeconds(cameraFloat);
         //spawn player
         SpawnPlayer();
+
+        SetActiveLevel(activeLevel + 1);
+
         SoundSystem.Instance.SS_StopMusic();
     }
 

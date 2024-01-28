@@ -2518,6 +2518,12 @@ MonoBehaviour:
   - {fileID: 1289365487}
   - {fileID: 1104168312}
   startStoryEvent: {fileID: 11400000, guid: 1723e8b952eeb7b408acb5ea760c4cf8, type: 2}
+  cityImage1: {fileID: 1729473945}
+  cityImage2: {fileID: 479481129}
+  cityImage3: {fileID: 1798244648}
+  city1: {fileID: 21300000, guid: c23dba3733279dc4c94a268b553a5197, type: 3}
+  city2: {fileID: 21300000, guid: cc66c440d3e0bb74881c8477bd1580c3, type: 3}
+  city3: {fileID: 21300000, guid: 6478276f245877d41b14d73980c9f0ba, type: 3}
 --- !u!114 &545787733
 MonoBehaviour:
   m_ObjectHideFlags: 0
