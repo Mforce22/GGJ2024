@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberGasCanister: 5
+  DeathEvent2: {fileID: 11400000, guid: 7644fc03971574e46a046e1bd95c1b55, type: 2}
   WinEvent: {fileID: 11400000, guid: 8e88c0bd8f2898e4c989a47b7f7946c4, type: 2}
   LoseEvent: {fileID: 11400000, guid: 6b5acd05abf7f704fb503c9e09ced431, type: 2}
   arm1: {fileID: 7969812466730458823}

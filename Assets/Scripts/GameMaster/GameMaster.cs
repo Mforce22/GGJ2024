@@ -110,7 +110,25 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         camera.setCity(completedLevel);
         completedLevel++;
         NextLevel();
-        StartCoroutine(startGame(cameraFloat * 2));
+        if(completedLevel < 3)
+        {
+            StartCoroutine(startGame(cameraFloat * 2));
+        }
+        else
+        {
+            StartCoroutine(EndGame(cameraFloat));   
+        }
+        
+    }
+
+    private IEnumerator EndGame(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        NextLevel();
+        yield return new WaitForSeconds(seconds);
+        NextLevel();
+        yield return new WaitForSeconds(seconds);
+        NextLevel() ;
     }
 
     private void LoseMatch(GameEvent evt)
