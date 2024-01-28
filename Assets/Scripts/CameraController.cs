@@ -46,7 +46,12 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Sprite city3;
 
+    [SerializeField]
+    private Sprite city1Sad;
+
     private bool isLerping = false;
+
+    private bool changed = false;
 
     //private GameMaster gameMaster;
 
@@ -130,11 +135,20 @@ public class CameraController : MonoBehaviour
         }
         if(index == 1)
         {
-            cityImage1.sprite = city2;
+            cityImage2.sprite = city2;
         }
         if( index == 2)
         {
-            cityImage1.sprite = city3;
+            cityImage3.sprite = city3;
+        }
+    }
+
+    public void setSad()
+    {
+        if (!changed)
+        {
+            cityImage1.sprite = city1Sad;
+            changed = true;
         }
     }
 }
