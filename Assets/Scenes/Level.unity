@@ -2478,7 +2478,7 @@ Transform:
   m_GameObject: {fileID: 545787728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -208.7, y: 35.1, z: -20}
+  m_LocalPosition: {x: -166.59, y: 35.1, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2497,7 +2497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - obj: {fileID: 332336009}
   - obj: {fileID: 859758735}
   - obj: {fileID: 1382353320}
   - obj: {fileID: 1700260254}
@@ -3342,7 +3341,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 52065cf16ce51b942b07d5bb142684b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c50b1136a45ead443b90149e37b987ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4239,7 +4238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 17e10c785c6109a42bf21d3377618b48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e408c5bf0254d741b3ee9724e6b1279, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5715,7 +5714,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e29a71ec5434eb549b2bd4af80f90f4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c23dba3733279dc4c94a268b553a5197, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7287,6 +7286,7 @@ GameObject:
   - component: {fileID: 2061496767}
   - component: {fileID: 2061496769}
   - component: {fileID: 2061496768}
+  - component: {fileID: 2061496770}
   m_Layer: 5
   m_Name: Story3
   m_TagString: Untagged
@@ -7333,7 +7333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1e3c7f4d9b973594cb3f0395fd77ba78, type: 3}
+  m_Sprite: {fileID: 31843813, guid: 5d48fcd6bd9974d498314fd9eadd56b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7351,6 +7351,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061496766}
   m_CullTransparentMesh: 1
+--- !u!95 &2061496770
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061496766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 076ca551cfec2a243859a8a506e1db7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2064359762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7740,7 +7761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 04a104a23728c8743beb72479ffff469, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c23dba3733279dc4c94a268b553a5197, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
