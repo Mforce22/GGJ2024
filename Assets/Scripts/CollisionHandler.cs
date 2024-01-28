@@ -80,8 +80,12 @@ public class CollisionHandler : MonoBehaviour
         //get transform
         if (transform.position.y <= -5)
         {
-            StartCoroutine(PlayerLost());
-            Destroy(gameObject);
+            //tartCoroutine(PlayerLost());
+            //Destroy(gameObject);
+            //set location to 1000
+
+            transform.position = new Vector3(1000, 1000, 1000);
+            Die();
         }
     }
 
