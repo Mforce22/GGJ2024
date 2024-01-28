@@ -271,7 +271,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 28fc776bcdd332b4ba5fb8755d5a47e6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -357,6 +357,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1494016149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494016145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129ee98a35d63dd4b84a3650f408c191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1605396583
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +407,8 @@ MonoBehaviour:
   startStoryEvent: {fileID: 11400000, guid: 1723e8b952eeb7b408acb5ea760c4cf8, type: 2}
   winMatchEvent: {fileID: 11400000, guid: 8e88c0bd8f2898e4c989a47b7f7946c4, type: 2}
   loseMatchEvent: {fileID: 11400000, guid: 6b5acd05abf7f704fb503c9e09ced431, type: 2}
+  startMusicEvent: {fileID: 11400000, guid: 761d3756f61e2024d8ec2b3fe67e7135, type: 2}
+  assembleMusicEvent: {fileID: 11400000, guid: 75bf61e5b74bf944887b9bcd3321dcfd, type: 2}
 --- !u!4 &1605396585
 Transform:
   m_ObjectHideFlags: 0
@@ -805,6 +819,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6420946177785090529, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1494016148}
+    - targetCorrespondingSourceObject: {fileID: 6420946177785090529, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1494016149}
   m_SourcePrefab: {fileID: 100100000, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
 --- !u!1001 &1111076778467547665
 PrefabInstance:

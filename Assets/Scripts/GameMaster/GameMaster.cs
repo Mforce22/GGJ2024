@@ -33,6 +33,12 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent loseMatchEvent;
 
+    [SerializeField]
+    private GameEvent startMusicEvent;
+
+    [SerializeField]
+    private GameEvent assembleMusicEvent;
+
 
     private CameraController camera;
 
@@ -59,7 +65,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     // Start is called before the first frame update
     void Start()
     {
-
+        startMusicEvent.Invoke();
     }
 
     // Update is called once per frame
@@ -110,7 +116,8 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         cameraFloat = camera.GetDelayTime();
 
         StartCoroutine(waitSecs(waitTime));
-        StartCoroutine(waitSecs(waitTime * 2));
+
+        StartCoroutine(waitSecsAssemble(waitTime * 2));
         //camera.NextTarget();
         StartCoroutine(waitSecs(waitTime * 3));
         //camera.NextTarget();
@@ -124,6 +131,14 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private IEnumerator waitSecs(float secs)
     {
         yield return new WaitForSeconds(secs);
+        SoundSystem.Instance.SS_StopMusic();
+        Debug.Log("Coroutine finished");
+        camera.NextTarget();
+    }
+    private IEnumerator waitSecsAssemble(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        assembleMusicEvent.Invoke();
         Debug.Log("Coroutine finished");
         camera.NextTarget();
     }
