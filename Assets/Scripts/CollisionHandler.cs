@@ -106,9 +106,12 @@ public class CollisionHandler : MonoBehaviour
 
     private void PlayerWon()
     {
+        transform.position = new Vector3(1000, 1000, 1000);
         GetComponent<BoxCollider>().enabled = false;
         WinEvent.Invoke();
         gasTaken = 0;
+        Destroy(gameObject);
+
     }
 
     private void OnCollisionEnter(Collision collision)

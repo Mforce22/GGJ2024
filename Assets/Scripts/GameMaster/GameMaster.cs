@@ -110,15 +110,15 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         camera.setCity(completedLevel);
         completedLevel++;
         NextLevel();
-        if(completedLevel < 3)
+        if (completedLevel < 3)
         {
             StartCoroutine(startGame(cameraFloat * 2));
         }
         else
         {
-            StartCoroutine(EndGame(cameraFloat));   
+            StartCoroutine(EndGame(waitTime));
         }
-        
+
     }
 
     private IEnumerator EndGame(float seconds)
@@ -128,7 +128,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         yield return new WaitForSeconds(seconds);
         NextLevel();
         yield return new WaitForSeconds(seconds);
-        NextLevel() ;
+        NextLevel();
     }
 
     private void LoseMatch(GameEvent evt)
@@ -145,7 +145,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         Debug.Log("Story started");
 
         //debug
-        
+
 
         //camera = GameObject.Find("Main Camera").GetComponent<CameraController>();
 
@@ -164,12 +164,12 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //Start the game
 
     }
-    
+
     private IEnumerator waitSecsBip(float secs)
     {
         yield return new WaitForSeconds(secs);
         SoundSystem.Instance.SS_StopMusic();
-        
+
         Debug.Log("Coroutine finished");
         camera.NextTarget();
         yield return new WaitForSeconds(secondsToWait);
@@ -189,7 +189,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     {
         yield return new WaitForSeconds(secs);
         SoundSystem.Instance.SS_StopMusic();
-        
+
         Debug.Log("Coroutine finished");
         camera.NextTarget();
         yield return new WaitForSeconds(secondsToWait);
