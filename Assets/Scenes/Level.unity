@@ -2519,6 +2519,12 @@ MonoBehaviour:
   - {fileID: 1289365487}
   - {fileID: 1104168312}
   startStoryEvent: {fileID: 11400000, guid: 1723e8b952eeb7b408acb5ea760c4cf8, type: 2}
+  cityImage1: {fileID: 1729473945}
+  cityImage2: {fileID: 479481129}
+  cityImage3: {fileID: 1798244648}
+  city1: {fileID: 21300000, guid: c23dba3733279dc4c94a268b553a5197, type: 3}
+  city2: {fileID: 21300000, guid: cc66c440d3e0bb74881c8477bd1580c3, type: 3}
+  city3: {fileID: 21300000, guid: 6478276f245877d41b14d73980c9f0ba, type: 3}
 --- !u!114 &545787733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3358,6 +3364,7 @@ GameObject:
   - component: {fileID: 797088959}
   - component: {fileID: 797088961}
   - component: {fileID: 797088960}
+  - component: {fileID: 797088962}
   m_Layer: 5
   m_Name: Story4
   m_TagString: Untagged
@@ -3404,7 +3411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c50b1136a45ead443b90149e37b987ab, type: 3}
+  m_Sprite: {fileID: -737507762, guid: 4c2eb821f679e724987790ec537737a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3422,6 +3429,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797088958}
   m_CullTransparentMesh: 1
+--- !u!95 &797088962
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797088958}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d47add9b030ae34994bf05b3fcceaa7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &803409545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4255,6 +4283,7 @@ GameObject:
   - component: {fileID: 1063018286}
   - component: {fileID: 1063018288}
   - component: {fileID: 1063018287}
+  - component: {fileID: 1063018289}
   m_Layer: 5
   m_Name: Story5
   m_TagString: Untagged
@@ -4301,7 +4330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e408c5bf0254d741b3ee9724e6b1279, type: 3}
+  m_Sprite: {fileID: 1583307238, guid: 5ae2dd2a64590344381ff68c35c207fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4319,6 +4348,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063018285}
   m_CullTransparentMesh: 1
+--- !u!95 &1063018289
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063018285}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0041d39190238844bbaff11cf1f6f3ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1071002985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5164,6 +5214,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 252440785}
     m_Modifications:
+    - target: {fileID: 715986964013338665, guid: 2d96c981e0a2c1145b95e21708a381b0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4111999273031510218, guid: 2d96c981e0a2c1145b95e21708a381b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.87
@@ -7284,6 +7338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 252440785}
     m_Modifications:
+    - target: {fileID: -4969262521836369792, guid: 21456140d001e6a4f8ad4485137f3b4a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1203486726591772756, guid: 21456140d001e6a4f8ad4485137f3b4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.75

@@ -120,4 +120,10 @@ public class CollisionHandler : MonoBehaviour
             }
         }
     }
+
+    public void PlayerDeath()
+    {
+        Destroy(gameObject);
+        StartCoroutine(PlayerLost());
+    }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3747015658722733902}
   - component: {fileID: 4115222681648753989}
   - component: {fileID: 1618948735469975993}
+  - component: {fileID: -4969262521836369792}
   m_Layer: 0
   m_Name: GroundDrone
   m_TagString: Enemy
@@ -164,6 +165,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.492004, y: 0.4185533, z: 1}
   m_Center: {x: 0.24600244, y: 0.07161728, z: 0}
+--- !u!114 &-4969262521836369792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600984581678850612}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3857b21470494384bf633b35f1bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent: {fileID: 11400000, guid: fd1a45e5801fa7d41a2c38b64ce1e356, type: 2}
+  minTime: 15
+  maxTime: 25
 --- !u!1001 &5792285150944037702
 PrefabInstance:
   m_ObjectHideFlags: 0

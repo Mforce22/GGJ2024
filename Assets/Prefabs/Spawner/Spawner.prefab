@@ -115,3 +115,4 @@ MonoBehaviour:
   changeLevelEvent: {fileID: 11400000, guid: 6889c0305965ab8428ee2768b3f00ea7, type: 2}
   leftLimiters: {fileID: 2651375453351447067}
   rightLimiters: {fileID: 6442713201335714517}
+  fallingObject: {fileID: 7763420590802020580, guid: d95021cc29615b445a9e34d722342795, type: 3}
