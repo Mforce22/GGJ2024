@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField]
-    private int numberGasCanister = 10;
+    private int numberGasCanister = 5;
 
     [Header("Events")]
 
