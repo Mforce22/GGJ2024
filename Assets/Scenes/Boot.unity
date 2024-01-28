@@ -414,6 +414,7 @@ MonoBehaviour:
   hintSoundEvent: {fileID: 11400000, guid: 80fd26b67df0cf742936d2b7a8a59790, type: 2}
   bipSoundEvent: {fileID: 11400000, guid: 4b033639b6cb3f446a45cf4942c0446c, type: 2}
   city1SoundEvent: {fileID: 11400000, guid: efc7c01684e96f649a76cc41c16deaa7, type: 2}
+  endGameEvent: {fileID: 11400000, guid: 7f8f1017a001f0745a0b7c764b9bcb71, type: 2}
 --- !u!4 &1605396585
 Transform:
   m_ObjectHideFlags: 0
@@ -518,6 +519,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: popi
+      value: 
+      objectReference: {fileID: 8300000, guid: beec417f2b2e0994a866af900cb6ccb2, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
       propertyPath: weld
       value: 
       objectReference: {fileID: 8300000, guid: dd187ce0cc151d64d9887c2b1465d85e, type: 3}
@@ -577,6 +582,10 @@ PrefabInstance:
       propertyPath: jumpRobot
       value: 
       objectReference: {fileID: 8300000, guid: 705b269dd84f998488ad2f795a8376bd, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: popiEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f8f1017a001f0745a0b7c764b9bcb71, type: 2}
     - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
       propertyPath: rainDrops
       value: 

@@ -54,6 +54,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent city1SoundEvent;
 
+    [SerializeField]
+    private GameEvent endGameEvent;
+
 
     private CameraController camera;
 
@@ -129,6 +132,10 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         NextLevel();
         yield return new WaitForSeconds(seconds);
         NextLevel();
+        yield return new WaitForSeconds(1);
+        endGameEvent.Invoke();
+        yield return new WaitForSeconds(5);
+        TravelSystem.Instance.SceneLoad("MainMenu");
     }
 
     private void LoseMatch(GameEvent evt)

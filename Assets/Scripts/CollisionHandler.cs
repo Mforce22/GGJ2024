@@ -104,6 +104,7 @@ public class CollisionHandler : MonoBehaviour
         Destroy(this);
     }
 
+    [ContextMenu("PlayerWon")]
     private void PlayerWon()
     {
         transform.position = new Vector3(1000, 1000, 1000);

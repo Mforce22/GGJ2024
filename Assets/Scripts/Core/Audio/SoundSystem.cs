@@ -17,6 +17,9 @@ public class SoundSystem : Singleton<SoundSystem>, ISystem
     private GameEvent batWingsEvent;
 
     [SerializeField]
+    private GameEvent popiEvent;
+
+    [SerializeField]
     private GameEvent ratSqueakEvent;
 
     [SerializeField]
@@ -123,6 +126,9 @@ public class SoundSystem : Singleton<SoundSystem>, ISystem
 
     [SerializeField]
     private AudioClip ratSqueak;
+
+    [SerializeField]
+    private AudioClip popi;
 
     [Header("Environment")]
     [SerializeField]
