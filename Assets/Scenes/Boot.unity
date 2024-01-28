@@ -389,6 +389,319 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &230770640052432852
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: weld
+      value: 
+      objectReference: {fileID: 8300000, guid: dd187ce0cc151d64d9887c2b1465d85e, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: batWings
+      value: 
+      objectReference: {fileID: 8300000, guid: d9724c6f06ea0014cab05cb42eca0c44, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: dieEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 7644fc03971574e46a046e1bd95c1b55, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: dieRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: a62cec41553869f42852134dff653304, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: ideaDing
+      value: 
+      objectReference: {fileID: 8300000, guid: db631904715c8a34b9b90a47821c38b2, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad1
+      value: 
+      objectReference: {fileID: 8300000, guid: 13aaa59ddc3d1a746bef78f5b27fc03d, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad2
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ae9db77236a8804d8712ff4aa971d97, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad3
+      value: 
+      objectReference: {fileID: 8300000, guid: 96539c9e8a6e0234aae0f1e1ba38842b, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad4
+      value: 
+      objectReference: {fileID: 8300000, guid: e2a2b4e6a17c27c41b86cd157307da8e, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad5
+      value: 
+      objectReference: {fileID: 8300000, guid: f1aec38456b48014a819ef2042b31f1f, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad6
+      value: 
+      objectReference: {fileID: 8300000, guid: 744d4708c7e195b49be0a0cb3f427464, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad7
+      value: 
+      objectReference: {fileID: 8300000, guid: a2702d3a1b3cb684691fdb4ae9336ec6, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad8
+      value: 
+      objectReference: {fileID: 8300000, guid: fa4f767e541682d4ca5ab8d9b38cfaad, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: jumpEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c2e471b2773e0d4cb1bf907d2d0b507, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: jumpRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: 705b269dd84f998488ad2f795a8376bd, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: rainDrops
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e48f6337cce9bd40b484bfc4ea58a09, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: ratSqueak
+      value: 
+      objectReference: {fileID: 8300000, guid: 4da61d7d7f1aaf14892b9c03111144ba, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: talkEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: c31652fab60be0c42b48558c1e26e105, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: talkRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: 016e225f5aed0174ba26c568c7244549, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: weldEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 75bf61e5b74bf944887b9bcd3321dcfd, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: beep1Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b033639b6cb3f446a45cf4942c0446c, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: beep1Robot
+      value: 
+      objectReference: {fileID: 8300000, guid: f7cff4d41b1b1fb44a763065137e84e6, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: beep2Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 280923b1674f5434eb489d1477c9d140, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: beep2Robot
+      value: 
+      objectReference: {fileID: 8300000, guid: f880365add01d324abd13b8ed21963da, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: beep3Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 2273e7004854cbc4e989bf8779b17e6b, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: beep3Robot
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c6cebfbeeaaa97429469bdb7f689fb7, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: citySound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 7cb2a0ce66263c24c92058f79542b481, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: citySound2
+      value: 
+      objectReference: {fileID: 8300000, guid: 110c6932540ac034eb38c27e676f9aa2, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdLaugh1
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dc96bb9e6eedef429d1daf3d15dd1c7, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdLaugh2
+      value: 
+      objectReference: {fileID: 8300000, guid: 262cab8fc37b3b04dba0d53d82d67148, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdLaugh3
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d74c86b589760c46bc70f30f3cecf0a, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: batWingsEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: c2730eedeacb0e54aadc187a506ab24b, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: ideaDingEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 80fd26b67df0cf742936d2b7a8a59790, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: completedLevel
+      value: 
+      objectReference: {fileID: 8300000, guid: c98752069e9b2d6419da017c379c6f79, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad1Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fb6fcb449f2c641bf9f7de89f70442, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad2Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a177011732c7eb42b0eae47b67bf482, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad3Event
+      value: 
+      objectReference: {fileID: 11400000, guid: d8666dd03be4f7d479a40de4d5f9638f, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad4Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fb38beca06c3944c97f980c3294c09a, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad5Event
+      value: 
+      objectReference: {fileID: 11400000, guid: dceb361a4ebb6204586c6b23e76b34b9, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad6Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ea5e67e8f0f7ba458bd2b64d3b9472a, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad7Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a15a26381ce56040afb666540ed9649, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdSad8Event
+      value: 
+      objectReference: {fileID: 11400000, guid: f881dc49a52cf25418b5cb50ef85d465, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: obtainGasEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 68bfc585f1689cd4b992647e625a611f, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: obtainGasRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cb9346bac7f3424e9aacc0164c95093, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: rainDropsEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: b3c952a01843a6548b1c5a4245dfc5cd, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: ratSqueakEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: fd1a45e5801fa7d41a2c38b64ce1e356, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: scientistVoice
+      value: 
+      objectReference: {fileID: 8300000, guid: 99b4a8af2bb50164bb90e52cb48ae8be, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 28fc776bcdd332b4ba5fb8755d5a47e6, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: citySound1Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 87beaa6ae8a9bd44c8e9a763da6c74d2, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: citySound2Event
+      value: 
+      objectReference: {fileID: 11400000, guid: efc7c01684e96f649a76cc41c16deaa7, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: descendingEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 205d5ca20c9f5b54b8644090e62776e9, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: descendingRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: 2edef59d6c2574d4181e5674e4dbb409, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdLaugh1Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 92ddfc44d45dd734abfd5a616a7829eb, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdLaugh2Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f10cb16f401115409d4afe41025a3dc, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: crowdLaugh3Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 3687e9a3103d47a42b142ca3bbeb10f2, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: accelerationEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e9f8fac73c96ce499b065c774933e92, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: accelerationRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: 12a4d111835bb754898dd69584b01874, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: decelerationEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: bf0cff56a0cab234a9abbc616471c75c, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: decelerationRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: a75f4751e2585ea46931059db86e9e03, type: 3}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: completedLevelEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 103f038d5e46dfc4893e47973457c652, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: scientistVoiceEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a0c66231f79c5d4ba9eb5f5f35cc329, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: backgroundMusicEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 761d3756f61e2024d8ec2b3fe67e7135, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: constantMovementEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 9672ae4cd77153c4ba8e1db3e600d84d, type: 2}
+    - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: constantMovementRobot
+      value: 
+      objectReference: {fileID: 8300000, guid: 606d8332402ea4a4abda1bb9ff96da07, type: 3}
+    - target: {fileID: 6420946177785090529, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_Name
+      value: SoundSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 83.187386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.993155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.2032976
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891210242983080707, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
 --- !u!1001 &1111076778467547665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -802,6 +1115,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 6705546259121525971}
+  - {fileID: 230770640052432852}
   - {fileID: 2493166348455978040}
   - {fileID: 1111076778467547665}
   - {fileID: 109834595}
