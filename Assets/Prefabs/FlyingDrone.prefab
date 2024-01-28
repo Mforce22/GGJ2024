@@ -52,12 +52,12 @@ MonoBehaviour:
   viewCheckTime: 2
   chaseTime: 5
   viewPlayerRange: 7
-  viewObstacleWidth: 2
-  viewObstacleRange: 3
+  viewObstacleWidth: 0.5
+  viewObstacleRange: 1.5
   rotationSpeed: 100
-  wingsRotationSpeed: 100
+  wingsRotationSpeed: 500
   wingsTransform: {fileID: 2385666400874471591}
-  bodyRotationSpeed: 500
+  bodyRotationSpeed: 100
   bodyTransform: {fileID: 324065648706473759}
 --- !u!54 &7030943507397737594
 Rigidbody:
