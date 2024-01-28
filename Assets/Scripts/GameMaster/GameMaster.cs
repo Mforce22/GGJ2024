@@ -201,6 +201,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     void NextLevel()
     {
         camera.NextTarget();
+        changeLevelEvent.Invoke();
     }
 
     void PreviousLevel()

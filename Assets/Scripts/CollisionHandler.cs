@@ -35,8 +35,7 @@ public class CollisionHandler : MonoBehaviour
         {
             Debug.Log("ENEMY");
             // self destruct
-            Destroy(gameObject);
-            StartCoroutine(PlayerLost());
+            PlayerDeath();
         }
     }
 
@@ -85,5 +84,11 @@ public class CollisionHandler : MonoBehaviour
                 transform.SetParent(null);
             }
         }
+    }
+
+    public void PlayerDeath()
+    {
+        Destroy(gameObject);
+        StartCoroutine(PlayerLost());
     }
 }
