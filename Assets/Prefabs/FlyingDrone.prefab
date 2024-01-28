@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8a6f9532d647e478e83391748bac01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   viewCheckTime: 2
   chaseTime: 5
   viewPlayerRange: 7

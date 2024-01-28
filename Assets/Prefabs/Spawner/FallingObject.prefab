@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc24f4b34147b8940800968f95492283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSoundEvent: {fileID: 11400000, guid: b3c952a01843a6548b1c5a4245dfc5cd, type: 2}
 --- !u!4 &7871622402173786331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72467fde5d7b8254b97c66ef287e7976, type: 3}
