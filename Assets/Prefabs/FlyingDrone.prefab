@@ -48,11 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8a6f9532d647e478e83391748bac01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 5
   viewCheckTime: 2
   chaseTime: 5
-  viewPlayerRange: 45
-  viewObstacleRange: 45
+  viewPlayerRange: 7
+  viewObstacleRange: 3
   rotationSpeed: 100
   wingsRotationSpeed: 100
   wingsTransform: {fileID: 2385666400874471591}
