@@ -114,9 +114,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //camera.NextTarget();
         StartCoroutine(waitSecs(waitTime * 3));
         //camera.NextTarget();
-        StartCoroutine(waitSecs(waitTime * 4));
+        //StartCoroutine(waitSecs(waitTime * 4));
         //camera.NextTarget();
-        StartCoroutine(startGame(waitTime * 5));
+        StartCoroutine(startGame(waitTime * 4));
         //Start the game
 
     }
