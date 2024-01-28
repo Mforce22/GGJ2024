@@ -3148,7 +3148,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1203486726591772756, guid: cb930070aa53c67459bcebf5811f5107, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.78
+      value: 11.13
       objectReference: {fileID: 0}
     - target: {fileID: 1203486726591772756, guid: cb930070aa53c67459bcebf5811f5107, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5837,6 +5837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingDrone
       objectReference: {fileID: 0}
+    - target: {fileID: 7139968833313974955, guid: 2d96c981e0a2c1145b95e21708a381b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6605,7 +6609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8619055415715219566, guid: b6791ac22e12ee74da76d49024ecd9dc, type: 3}
       propertyPath: distanceY
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6945,7 +6949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4111999273031510218, guid: 2d96c981e0a2c1145b95e21708a381b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.55
+      value: 10.88
       objectReference: {fileID: 0}
     - target: {fileID: 4111999273031510218, guid: 2d96c981e0a2c1145b95e21708a381b0, type: 3}
       propertyPath: m_LocalPosition.z
