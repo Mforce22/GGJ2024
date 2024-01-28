@@ -403,7 +403,7 @@ MonoBehaviour:
   secondsToWait: 1
   playerPrefab: {fileID: 7973410841093241977, guid: 1016955512d60af45a1e5993eeffea65, type: 3}
   activeLevel: 0
-  waitTime: 3
+  waitTime: 4
   changeLevelEvent: {fileID: 11400000, guid: 6889c0305965ab8428ee2768b3f00ea7, type: 2}
   startStoryEvent: {fileID: 11400000, guid: 1723e8b952eeb7b408acb5ea760c4cf8, type: 2}
   winMatchEvent: {fileID: 11400000, guid: 8e88c0bd8f2898e4c989a47b7f7946c4, type: 2}
@@ -1017,6 +1017,10 @@ PrefabInstance:
     - target: {fileID: 2444855133328200366, guid: a04ef81e022db1242954e1f595603db9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933294021004991580, guid: a04ef81e022db1242954e1f595603db9, type: 3}
+      propertyPath: _Priority
+      value: 82
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

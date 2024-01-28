@@ -200,7 +200,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 66445236344238178}
+        m_TargetAssemblyTypeName: OptionsViewController, Assembly-CSharp
+        m_MethodName: setSoundVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2903672710809021328
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +338,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 66445236344238178}
+        m_TargetAssemblyTypeName: OptionsViewController, Assembly-CSharp
+        m_MethodName: setAudioVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3146148162677586715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78bb78133e9c3b64c876e5dfdfcba80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSlider: {fileID: 3220541128047686671}
+  soundSlider: {fileID: 276693333346277765}
 --- !u!1001 &2835775872325403856
 PrefabInstance:
   m_ObjectHideFlags: 0

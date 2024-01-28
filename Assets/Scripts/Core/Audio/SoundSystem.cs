@@ -264,7 +264,7 @@ public class SoundSystem : Singleton<SoundSystem>, ISystem
         musicSource = GetComponent<AudioSource>();
         musicSource.loop = false;
         musicSource.playOnAwake = false;
-        musicSource.volume = 1; // Default volume.
+        musicSource.volume = 0.6f; // Default volume.
         // Signal that the system setup is finished.
         SystemCoordinator.Instance.FinishSystemSetup(this);
     }
