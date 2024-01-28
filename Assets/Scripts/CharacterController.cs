@@ -129,6 +129,10 @@ public class CharacterController : MonoBehaviour
         if (currentDirection != 0)
         {
             currentSpeed += acceleration * currentDirection * Time.fixedDeltaTime;
+            if (Mathf.Sign(currentSpeed) != Mathf.Sign(currentDirection))
+            {
+                currentSpeed += deceleration * -Math.Sign(currentSpeed) * Time.fixedDeltaTime;
+            }
             // clamp inclination to 45 degrees
             float inclination = Mathf.Clamp(currentSpeed / MaxSpeed * 45, -30f, 30f);
             if (currentDirection > 0)
