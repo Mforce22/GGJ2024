@@ -21,7 +21,7 @@ public class AudioSystem : Singleton<AudioSystem>, ISystem {
         musicSource = GetComponent<AudioSource>();
         musicSource.loop = true;
         musicSource.playOnAwake = false;
-        musicSource.volume = 1; // Default volume.
+        musicSource.volume = 0.8f; // Default volume.
         
 
         // Signal that the system setup is finished.
