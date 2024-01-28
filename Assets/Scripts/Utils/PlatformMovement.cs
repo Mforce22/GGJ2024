@@ -68,14 +68,14 @@ public class PlatformMovement : MonoBehaviour
             }
             //transform.position = new Vector3(transform.position.x, (_transform.position.y + Mathf.PingPong(Time.deltaTime * speedY, distanceY)), transform.position.z);
         }
-        /*
-        if (speedX > 0 && distanceX > 0)
+        
+        if(transform.position.y <= -1)
         {
-            transform.position = new Vector3((_transform.position.x + Mathf.PingPong(Time.deltaTime * speedX, distanceX)), transform.position.y, transform.position.z);
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-        else if(speedY > 0 && distanceY >0)
+        if (transform.position.y > -1)
         {
-            transform.position = new Vector3(transform.position.x, (_transform.position.y + Mathf.PingPong(Time.deltaTime * speedY, distanceY)), transform.position.z);
-        }*/
+            gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 }
