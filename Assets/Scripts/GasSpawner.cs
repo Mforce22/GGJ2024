@@ -10,10 +10,15 @@ public class GasSpawner : MonoBehaviour
     private List<GameObject> gasSpawnPoints;
     private List<Vector3> gasTargets;
     // Start is called before the first frame update
-    void Start()
+    void Activate()
     {
         reset();
         InvokeRepeating("SpawnNew", 0.0f, 5.0f);
+    }
+
+    void Deactivate()
+    {
+        CancelInvoke();
     }
 
     // Update is called once per frame

@@ -15,6 +15,13 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField]
     private GameEvent LoseEvent;
 
+    [SerializeField]
+    private Transform arm1;
+    [SerializeField]
+    private Transform arm2;
+    [SerializeField]
+    private Transform body;
+
     private int gasTaken = 0;
 
     private void OnTriggerEnter(Collider other)
@@ -35,9 +42,34 @@ public class CollisionHandler : MonoBehaviour
         {
             Debug.Log("ENEMY");
             // self destruct
-            Destroy(gameObject);
-            StartCoroutine(PlayerLost());
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        arm1.transform.SetParent(null);
+        arm2.transform.SetParent(null);
+        arm1.GetComponent<Rigidbody>().isKinematic = false;
+        arm2.GetComponent<Rigidbody>().isKinematic = false;
+        body.transform.SetParent(null);
+        body.GetComponent<Rigidbody>().isKinematic = false;
+        body.GetComponent<BoxCollider>().enabled = true;
+        // add forces
+        float deathForce = 300;
+        float leftArmRotation = Random.Range(-1f, 1f);
+        float rightArmRotation = Random.Range(-1f, 1f);
+        float leftArmForceX = Random.Range(-1f, 1f);
+        float rightArmForceX = Random.Range(-1f, 1f);
+        float leftArmForceY = Random.Range(-1f, 1f);
+        float rightArmForceY = Random.Range(-1f, 1f);
+        arm1.GetComponent<Rigidbody>().AddForce(new Vector3(leftArmForceX, leftArmForceY, -1) * deathForce / 2);
+        arm2.GetComponent<Rigidbody>().AddForce(new Vector3(rightArmForceX, rightArmForceY, -1) * deathForce / 2);
+        body.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, -1) * deathForce / 2);
+        arm1.GetComponent<Rigidbody>().AddTorque(new Vector3(0, leftArmRotation, -1) * deathForce);
+        arm2.GetComponent<Rigidbody>().AddTorque(new Vector3(0, rightArmRotation, -1) * deathForce);
+        body.GetComponent<Rigidbody>().AddTorque(new Vector3(0, 0, -1) * deathForce);
+        StartCoroutine(PlayerLost());
     }
 
     private void Update()
@@ -52,8 +84,10 @@ public class CollisionHandler : MonoBehaviour
 
     private IEnumerator PlayerLost()
     {
+        yield return new WaitForSeconds(2f);
         LoseEvent.Invoke();
         yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
         Destroy(this);
     }
 

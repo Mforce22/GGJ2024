@@ -16,6 +16,10 @@ public class GroundDrone : MonoBehaviour
     private Quaternion tailDesiredRotation = Quaternion.Euler(0, 0, 0);
 
     private Quaternion desiredRotation;
+    [SerializeField]
+    private float viewObstacleWidth = 1f;
+    [SerializeField]
+    private float viewObstacleRange = 1f;
 
     void Start()
     {
@@ -39,9 +43,9 @@ public class GroundDrone : MonoBehaviour
     void Move()
     {
         // move the drone forward
-        if (!willFall())
+        if (!willFall() && !canSeeObstacle())
         {
-            transform.position += transform.right * 5 * Time.deltaTime;
+            transform.position += transform.right * speed * Time.deltaTime;
         }
         else
         {
@@ -75,10 +79,26 @@ public class GroundDrone : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 obstacleDirection = transform.right + transform.up * -1;
-        if (!Physics.Raycast(transform.position, obstacleDirection, out hit, 5f))
+        if (!Physics.Raycast(transform.position, obstacleDirection, out hit, 1f))
         {
             Debug.Log("will fall");
             return true;
+        }
+        return false;
+    }
+
+    bool canSeeObstacle()
+    {
+        RaycastHit hit;
+        Vector3 obstacleDirection = transform.right;
+        // spherecast to check for obstacles
+        if (Physics.SphereCast(transform.position, viewObstacleWidth, obstacleDirection, out hit, viewObstacleRange))
+        {
+            // if the raycast hits an obstacle, return true
+            if (hit.collider.gameObject.tag == "Platform")
+            {
+                return true;
+            }
         }
         return false;
     }
