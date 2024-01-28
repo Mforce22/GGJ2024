@@ -134,7 +134,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     private void LoseMatch(GameEvent evt)
     {
         Debug.Log("Match lost");
-        StartCoroutine(lostGame(cameraFloat));
+        StartCoroutine(lostGame(waitTime));
 
 
     }
