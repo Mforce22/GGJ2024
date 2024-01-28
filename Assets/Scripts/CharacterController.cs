@@ -70,7 +70,7 @@ public class CharacterController : MonoBehaviour
 
     private void JumpCharacter()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, collider.size.y / 2 + .5f))
+        if (Physics.Raycast(transform.position, Vector3.down, collider.size.y / 2 + .8f))
         {
             //Debug.Log("JUMP");
             rigidbody.AddForce(new Vector3(0, jumpForce, 0));
@@ -137,7 +137,7 @@ public class CharacterController : MonoBehaviour
             }
             desiredRotation = Quaternion.Euler(0, currentDirection > 0 ? 0 : 180, inclination);
             desiredLArmRotation = Quaternion.Euler(-inclination * 3, 0, 0);
-            desiredRArmRotation = Quaternion.Euler(inclination * 3, 0, 0);
+            desiredRArmRotation = Quaternion.Euler(-inclination * 3, 0, 0);
         }
         else
         {
