@@ -102,6 +102,8 @@ public class CollisionHandler : MonoBehaviour
     private void PlayerWon()
     {
         WinEvent.Invoke();
+        transform.position = new Vector3(1000, 1000, 1000);
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
