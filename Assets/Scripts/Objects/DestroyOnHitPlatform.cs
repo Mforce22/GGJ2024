@@ -5,6 +5,9 @@ using UnityEngine;
 public class DestroyOnHitPlatform : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameEvent hitSoundEvent;
+
     float timePassed = 0;
 
     bool canCollide = false;
@@ -32,6 +35,9 @@ public class DestroyOnHitPlatform : MonoBehaviour
     {
         //Debug.Log("Prova trigger");
         Platform platform = other.gameObject.GetComponent<Platform>();
+
+        //Sound activation
+        hitSoundEvent.Invoke();
 
         if (platform != null && canCollide)
         {

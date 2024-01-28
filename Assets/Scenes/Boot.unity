@@ -580,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
       propertyPath: rainDrops
       value: 
-      objectReference: {fileID: 8300000, guid: 0e48f6337cce9bd40b484bfc4ea58a09, type: 3}
+      objectReference: {fileID: 8300000, guid: 10e7d0235e3da6745af9dd1e7d46060f, type: 3}
     - target: {fileID: 1384468661733134903, guid: 4a3810df215b83b4e8d7a792104e9a73, type: 3}
       propertyPath: ratSqueak
       value: 
