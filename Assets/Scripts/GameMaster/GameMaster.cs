@@ -6,6 +6,9 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 {
     [SerializeField]
     private int _Priority;
+
+    [SerializeField]
+    private float secondsToWait;
     public int Priority { get => _Priority; }
 
     [Header("Player")]
@@ -39,6 +42,18 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     [SerializeField]
     private GameEvent assembleMusicEvent;
 
+    [SerializeField]
+    private GameEvent citySoundsEvent;
+
+    [SerializeField]
+    private GameEvent hintSoundEvent;
+
+    [SerializeField]
+    private GameEvent bipSoundEvent;
+
+    [SerializeField]
+    private GameEvent city1SoundEvent;
+
 
     private CameraController camera;
 
@@ -65,7 +80,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
     // Start is called before the first frame update
     void Start()
     {
-        startMusicEvent.Invoke();
+        AudioSystem.Instance.StartMusic();
     }
 
     // Update is called once per frame
@@ -107,6 +122,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     private void StartStory(GameEvent evt)
     {
+        citySoundsEvent.Invoke();
         Debug.Log("Story started");
 
         //camera = GameObject.Find("Main Camera").GetComponent<CameraController>();
@@ -115,32 +131,57 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         camera = FindObjectOfType<CameraController>();
         cameraFloat = camera.GetDelayTime();
 
-        StartCoroutine(waitSecs(waitTime));
+        StartCoroutine(waitSecsHint(waitTime));
 
         StartCoroutine(waitSecsAssemble(waitTime * 2));
         //camera.NextTarget();
-        StartCoroutine(waitSecs(waitTime * 3));
+        StartCoroutine(waitSecsBip(waitTime * 3));
         //camera.NextTarget();
-        StartCoroutine(waitSecs(waitTime * 4));
+        StartCoroutine(waitSecsCity1(waitTime * 4));
         //camera.NextTarget();
         StartCoroutine(startGame(waitTime * 5));
         //Start the game
 
     }
-
-    private IEnumerator waitSecs(float secs)
+    private IEnumerator waitSecsCity1(float secs)
     {
         yield return new WaitForSeconds(secs);
         SoundSystem.Instance.SS_StopMusic();
+        
         Debug.Log("Coroutine finished");
         camera.NextTarget();
+        yield return new WaitForSeconds(secondsToWait);
+        city1SoundEvent.Invoke();
+    }
+    private IEnumerator waitSecsBip(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        SoundSystem.Instance.SS_StopMusic();
+        
+        Debug.Log("Coroutine finished");
+        camera.NextTarget();
+        yield return new WaitForSeconds(secondsToWait);
+        bipSoundEvent.Invoke();
+    }
+    private IEnumerator waitSecsHint(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        SoundSystem.Instance.SS_StopMusic();
+
+        Debug.Log("Coroutine finished");
+        camera.NextTarget();
+        yield return new WaitForSeconds(secondsToWait);
+        hintSoundEvent.Invoke();
     }
     private IEnumerator waitSecsAssemble(float secs)
     {
         yield return new WaitForSeconds(secs);
-        assembleMusicEvent.Invoke();
+        SoundSystem.Instance.SS_StopMusic();
+        
         Debug.Log("Coroutine finished");
         camera.NextTarget();
+        yield return new WaitForSeconds(secondsToWait);
+        assembleMusicEvent.Invoke();
     }
 
     private IEnumerator startGame(float secs)
