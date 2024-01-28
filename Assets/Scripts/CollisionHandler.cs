@@ -27,6 +27,8 @@ public class CollisionHandler : MonoBehaviour
 
     private int gasTaken = 0;
 
+    private bool isDead = false;
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("COLLISION");
@@ -51,28 +53,33 @@ public class CollisionHandler : MonoBehaviour
 
     private void Die()
     {
-        arm1.transform.SetParent(null);
-        arm2.transform.SetParent(null);
-        arm1.GetComponent<Rigidbody>().isKinematic = false;
-        arm2.GetComponent<Rigidbody>().isKinematic = false;
-        body.transform.SetParent(null);
-        body.GetComponent<Rigidbody>().isKinematic = false;
-        body.GetComponent<BoxCollider>().enabled = true;
-        // add forces
-        float deathForce = 300;
-        float leftArmRotation = Random.Range(-1f, 1f);
-        float rightArmRotation = Random.Range(-1f, 1f);
-        float leftArmForceX = Random.Range(-1f, 1f);
-        float rightArmForceX = Random.Range(-1f, 1f);
-        float leftArmForceY = Random.Range(-1f, 1f);
-        float rightArmForceY = Random.Range(-1f, 1f);
-        arm1.GetComponent<Rigidbody>().AddForce(new Vector3(leftArmForceX, leftArmForceY, -1) * deathForce / 2);
-        arm2.GetComponent<Rigidbody>().AddForce(new Vector3(rightArmForceX, rightArmForceY, -1) * deathForce / 2);
-        body.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, -1) * deathForce / 2);
-        arm1.GetComponent<Rigidbody>().AddTorque(new Vector3(0, leftArmRotation, -1) * deathForce);
-        arm2.GetComponent<Rigidbody>().AddTorque(new Vector3(0, rightArmRotation, -1) * deathForce);
-        body.GetComponent<Rigidbody>().AddTorque(new Vector3(0, 0, -1) * deathForce);
-        StartCoroutine(PlayerLost());
+        if (!isDead)
+        {
+            isDead = true;
+            GetComponent<BoxCollider>().enabled = false;
+            arm1.transform.SetParent(null);
+            arm2.transform.SetParent(null);
+            arm1.GetComponent<Rigidbody>().isKinematic = false;
+            arm2.GetComponent<Rigidbody>().isKinematic = false;
+            body.transform.SetParent(null);
+            body.GetComponent<Rigidbody>().isKinematic = false;
+            body.GetComponent<BoxCollider>().enabled = true;
+            // add forces
+            float deathForce = 300;
+            float leftArmRotation = Random.Range(-1f, 1f);
+            float rightArmRotation = Random.Range(-1f, 1f);
+            float leftArmForceX = Random.Range(-1f, 1f);
+            float rightArmForceX = Random.Range(-1f, 1f);
+            float leftArmForceY = Random.Range(-1f, 1f);
+            float rightArmForceY = Random.Range(-1f, 1f);
+            arm1.GetComponent<Rigidbody>().AddForce(new Vector3(leftArmForceX, leftArmForceY, -1) * deathForce / 2);
+            arm2.GetComponent<Rigidbody>().AddForce(new Vector3(rightArmForceX, rightArmForceY, -1) * deathForce / 2);
+            body.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, -1) * deathForce / 2);
+            arm1.GetComponent<Rigidbody>().AddTorque(new Vector3(0, leftArmRotation, -1) * deathForce);
+            arm2.GetComponent<Rigidbody>().AddTorque(new Vector3(0, rightArmRotation, -1) * deathForce);
+            body.GetComponent<Rigidbody>().AddTorque(new Vector3(0, 0, -1) * deathForce);
+            StartCoroutine(PlayerLost());
+        }
     }
 
     private void Update()
@@ -80,8 +87,10 @@ public class CollisionHandler : MonoBehaviour
         //get transform
         if (transform.position.y <= -5)
         {
-            StartCoroutine(PlayerLost());
-            Destroy(gameObject);
+            transform.position = new Vector3(1000, 1000, 1000);
+            Die();
+            //StartCoroutine(PlayerLost());
+            //Destroy(gameObject);
         }
     }
 
@@ -97,7 +106,9 @@ public class CollisionHandler : MonoBehaviour
 
     private void PlayerWon()
     {
+        GetComponent<BoxCollider>().enabled = false;
         WinEvent.Invoke();
+        gasTaken = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -127,7 +138,6 @@ public class CollisionHandler : MonoBehaviour
 
     public void PlayerDeath()
     {
-        Destroy(gameObject);
-        StartCoroutine(PlayerLost());
+        Die();
     }
 }
