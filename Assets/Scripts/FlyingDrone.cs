@@ -14,6 +14,8 @@ public class FlyingDrone : MonoBehaviour
     [SerializeField]
     private float viewPlayerRange = 7f;
     [SerializeField]
+    private float viewObstacleWidth = 2f;
+    [SerializeField]
     private float viewObstacleRange = 2f;
     [SerializeField]
     private float rotationSpeed = 500f;
@@ -135,7 +137,8 @@ public class FlyingDrone : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 obstacleDirection = transform.right;
-        if (Physics.Raycast(transform.position, obstacleDirection, out hit, viewObstacleRange))
+        // spherecast to check for obstacles
+        if (Physics.SphereCast(transform.position, viewObstacleWidth, obstacleDirection, out hit, viewObstacleRange))
         {
             // if the raycast hits an obstacle, return true
             if (hit.collider.gameObject.tag == "Platform")
