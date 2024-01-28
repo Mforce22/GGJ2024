@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6420946177785090529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7891210242983080707}
+  - component: {fileID: 1384468661733134903}
+  m_Layer: 0
+  m_Name: SoundSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7891210242983080707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420946177785090529}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 83.187386, y: 9.993155, z: 6.2032976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1384468661733134903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420946177785090529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf2297b27600dc41b866cdb04c26bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Priority: 81
+  batWingsEvent: {fileID: 0}
+  ratSqueakEvent: {fileID: 0}
+  rainDropsEvent: {fileID: 0}
+  citySound1Event: {fileID: 0}
+  citySound2Event: {fileID: 0}
+  completedLevelEvent: {fileID: 0}
+  ideaDingEvent: {fileID: 0}
+  weldEvent: {fileID: 0}
+  accelerationEvent: {fileID: 0}
+  constantMovementEvent: {fileID: 0}
+  decelerationEvent: {fileID: 0}
+  jumpEvent: {fileID: 0}
+  descendingEvent: {fileID: 0}
+  talkEvent: {fileID: 0}
+  dieEvent: {fileID: 0}
+  obtainGasEvent: {fileID: 0}
+  beep1Event: {fileID: 0}
+  beep2Event: {fileID: 0}
+  beep3Event: {fileID: 0}
+  scientistVoiceEvent: {fileID: 0}
+  crowdSad1Event: {fileID: 0}
+  crowdSad2Event: {fileID: 0}
+  crowdSad3Event: {fileID: 0}
+  crowdSad4Event: {fileID: 0}
+  crowdSad5Event: {fileID: 0}
+  crowdSad6Event: {fileID: 0}
+  crowdSad7Event: {fileID: 0}
+  crowdSad8Event: {fileID: 0}
+  crowdLaugh1Event: {fileID: 0}
+  crowdLaugh2Event: {fileID: 0}
+  crowdLaugh3Event: {fileID: 0}
+  backgroundMusicEvent: {fileID: 0}
+  batWings: {fileID: 0}
+  ratSqueak: {fileID: 0}
+  rainDrops: {fileID: 0}
+  citySound1: {fileID: 0}
+  citySound2: {fileID: 0}
+  completedLevel: {fileID: 0}
+  ideaDing: {fileID: 0}
+  weld: {fileID: 0}
+  accelerationRobot: {fileID: 0}
+  constantMovementRobot: {fileID: 0}
+  decelerationRobot: {fileID: 0}
+  jumpRobot: {fileID: 0}
+  descendingRobot: {fileID: 0}
+  talkRobot: {fileID: 0}
+  dieRobot: {fileID: 0}
+  obtainGasRobot: {fileID: 0}
+  beep1Robot: {fileID: 0}
+  beep2Robot: {fileID: 0}
+  beep3Robot: {fileID: 0}
+  scientistVoice: {fileID: 0}
+  crowdSad1: {fileID: 0}
+  crowdSad2: {fileID: 0}
+  crowdSad3: {fileID: 0}
+  crowdSad4: {fileID: 0}
+  crowdSad5: {fileID: 0}
+  crowdSad6: {fileID: 0}
+  crowdSad7: {fileID: 0}
+  crowdSad8: {fileID: 0}
+  crowdLaugh1: {fileID: 0}
+  crowdLaugh2: {fileID: 0}
+  crowdLaugh3: {fileID: 0}
+  backgroundMusic: {fileID: 0}
