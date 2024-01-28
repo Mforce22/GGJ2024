@@ -113,10 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d030790a0a288df42a45c7e3f9cfdcad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   rotationSpeed: 250
   tailRotationSpeed: 100
   tailTransform: {fileID: 6264659202302816861}
+  viewObstacleWidth: 1
+  viewObstacleRange: 1
 --- !u!54 &4115222681648753989
 Rigidbody:
   m_ObjectHideFlags: 0
