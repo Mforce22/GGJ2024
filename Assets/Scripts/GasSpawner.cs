@@ -9,6 +9,18 @@ public class GasSpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> gasSpawnPoints;
     private List<Vector3> gasTargets;
+    [Header("Events")]
+    [SerializeField]
+    private GameEvent changeLevelEvent;
+    [SerializeField]
+    private int activeInLevel = 0;
+
+    private void OnEnable()
+    {
+        //subscribe to event
+        changeLevelEvent.Subscribe(ChangeLevelCallback);
+    }
+
     // Start is called before the first frame update
     void Activate()
     {
@@ -21,6 +33,21 @@ public class GasSpawner : MonoBehaviour
         CancelInvoke();
     }
 
+    private void ChangeLevelCallback(GameEvent evt)
+    {
+
+
+        if (activeInLevel == GameMaster.Instance.GetActiveLevel())
+        {
+            Activate();
+        }
+        else
+        {
+            Deactivate();
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +57,12 @@ public class GasSpawner : MonoBehaviour
 
     void reset()
     {
+        // delete all actors with the tag "Gas"
+        GameObject[] gasObjects = GameObject.FindGameObjectsWithTag("Gas");
+        for (int i = 0; i < gasObjects.Length; i++)
+        {
+            Destroy(gasObjects[i]);
+        }
         gasTargets = new List<Vector3>();
         for (int i = 0; i < gasSpawnPoints.Count; i++)
         {

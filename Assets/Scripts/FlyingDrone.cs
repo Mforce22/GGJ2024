@@ -33,17 +33,12 @@ public class FlyingDrone : MonoBehaviour
     [SerializeField]
     private Transform bodyTransform;
 
-
-    private GameObject player;
-
     private bool isChasing = false;
 
     void Start()
     {
         // use InvokeRepeating to launch seePlayer() 2 seconds
         // after the game starts, and every 2 seconds after that
-        player =
-                GameObject.FindGameObjectWithTag("Player");
         InvokeRepeating("checkStartChase", viewCheckTime, viewCheckTime);
         desiredRotation = transform.rotation;
     }
@@ -51,6 +46,7 @@ public class FlyingDrone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Animate();
         if (Mathf.Approximately(transform.rotation.eulerAngles.y, desiredRotation.eulerAngles.y))
         {
@@ -60,6 +56,7 @@ public class FlyingDrone : MonoBehaviour
         {
             Rotate();
         }
+
     }
     void Move()
     {
@@ -114,6 +111,12 @@ public class FlyingDrone : MonoBehaviour
         // raycast from the drone to the player
         RaycastHit hit;
         // Vector3 playerDirection = transform.right;
+        GameObject player =
+        GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            return;
+        }
         Vector3 playerDirection = player.transform.position - transform.position;
         if (Physics.Raycast(transform.position, playerDirection, out hit, viewPlayerRange))
         {
