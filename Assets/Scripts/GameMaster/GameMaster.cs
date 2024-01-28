@@ -208,6 +208,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         yield return new WaitForSeconds(cameraFloat);
         //spawn player
         SpawnPlayer();
+        camera.setSad();
 
         SetActiveLevel(activeLevel + 1);
 
