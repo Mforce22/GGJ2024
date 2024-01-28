@@ -524,4 +524,9 @@ public class SoundSystem : Singleton<SoundSystem>, ISystem
     {
         musicSource.volume = volume;
     }
+
+    public float GetVolume()
+    {
+        return musicSource.volume;
+    }
 }
