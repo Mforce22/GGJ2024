@@ -53,7 +53,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         winMatchEvent.Unsubscribe(WinMatch);
         loseMatchEvent.Unsubscribe(LoseMatch);
         startStoryEvent.Unsubscribe(StartStory);
-        
+
     }
 
     // Start is called before the first frame update
@@ -88,13 +88,13 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //change level
         completedLevel++;
         NextLevel();
-        startGame(cameraFloat * 2);
+        StartCoroutine(startGame(cameraFloat * 2));
     }
 
     private void LoseMatch(GameEvent evt)
     {
         Debug.Log("Match lost");
-        lostGame(cameraFloat);
+        StartCoroutine(lostGame(cameraFloat));
 
 
     }
@@ -136,17 +136,17 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         NextLevel();
         yield return new WaitForSeconds(cameraFloat);
         //spawn player
-        SpawnPlayer();        
+        SpawnPlayer();
     }
 
     private IEnumerator lostGame(float secs)
     {
-        PreviousLevel() ;
+        PreviousLevel();
         yield return new WaitForSeconds(secs);
-        NextLevel() ;
+        NextLevel();
         yield return new WaitForSeconds(secs);
         //spawn player
-        SpawnPlayer() ;
+        SpawnPlayer();
     }
 
     void NextLevel()
@@ -156,6 +156,7 @@ public class GameMaster : Singleton<GameMaster>, ISystem
 
     void PreviousLevel()
     {
+        Debug.Log("Previous Level");
         camera.PreviousTarget();
     }
 
@@ -164,11 +165,11 @@ public class GameMaster : Singleton<GameMaster>, ISystem
         //spawn the player
 
         GameObject spawnLocation = camera.GetPlayerSpawnPoint(completedLevel);
-        
+
         //instantiate player
         if (spawnLocation != null)
         {
-            Instantiate(playerPrefab, spawnLocation.transform);
+            Instantiate(playerPrefab, spawnLocation.transform.position, Quaternion.identity);
         }
     }
 }

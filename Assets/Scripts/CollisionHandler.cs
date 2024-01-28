@@ -20,7 +20,7 @@ public class CollisionHandler : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("COLLISION");
-        Debug.Log(other.gameObject.tag);
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.CompareTag("Gas"))
         {
             Debug.Log("GAS");
@@ -28,7 +28,7 @@ public class CollisionHandler : MonoBehaviour
             gasTaken++;
             if (gasTaken >= numberGasCanister)
             {
-                WinEvent.Invoke();
+                PlayerWon();
             }
         }
         else if (other.gameObject.CompareTag("Enemy"))
@@ -36,16 +36,17 @@ public class CollisionHandler : MonoBehaviour
             Debug.Log("ENEMY");
             // self destruct
             Destroy(gameObject);
-            LoseEvent.Invoke();
+            StartCoroutine(PlayerLost());
         }
     }
 
     private void Update()
     {
         //get transform
-        if(transform.position.y <= -5)
+        if (transform.position.y <= -5)
         {
             StartCoroutine(PlayerLost());
+            Destroy(gameObject);
         }
     }
 
@@ -59,5 +60,30 @@ public class CollisionHandler : MonoBehaviour
     private void PlayerWon()
     {
         WinEvent.Invoke();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        PlatformMovement platform = collision.gameObject.GetComponent<PlatformMovement>();
+
+        if (platform != null)
+        {
+            if (platform.GetSpeedX() != 0 && transform.position.y > platform.transform.position.y)
+            {
+                transform.SetParent(platform.gameObject.transform);
+            }
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        PlatformMovement platform = collision.gameObject.GetComponent<PlatformMovement>();
+
+        if (platform != null)
+        {
+            if (platform.GetSpeedX() != 0)
+            {
+                transform.SetParent(null);
+            }
+        }
     }
 }
