@@ -1,4 +1,4 @@
-# GGJ2024
+# Beppy's Nitrous Oxide
 
 [PLAY NOW!](https://whatar.itch.io/beppys-nitrous-oxide)
 
